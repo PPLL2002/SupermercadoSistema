@@ -5,41 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="CadastrarCompras" Height="700" Width="800">
+        Title="CadastrarCompras" Height="706.5" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.75*"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="Fornecedor" Margin="5">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5 10">
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="45"  Width="300" />
-                <Button Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="search.png" Height="32" Width="32"/>
-                </Button>
-            </StackPanel>
+        <GroupBox Header="Fornecedor" Margin="10" Grid.RowSpan="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="0.75*"/>
+                    <RowDefinition Height="0.75*"/>
+                </Grid.RowDefinitions>
+                
+                <DataGrid Margin="5"/>
+                <Button Content="Listar Fornecedores" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Width="200" Height="30"/>
+
+                <TextBlock Text="Pesquisar" Grid.Row="1" Margin="15 0"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <Button Content="Ir" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30"/>
+                </StackPanel>
+            </Grid>
         </GroupBox>
-        <GroupBox Header="Produto" Margin="5" Grid.Column="1">
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="1">
-                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="45" Width="300"/>
-                <Button Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" BorderBrush="{x:Null}" Background="{x:Null}">
-                    <Image Source="search.png" Height="32" Width="32"/>
-                </Button>
-            </StackPanel>
+
+        <GroupBox Header="Produtos" Margin="10" Grid.RowSpan="4" Grid.Column="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="0.75*"/>
+                    <RowDefinition Height="0.75*"/>
+                    <RowDefinition Height="0.75*"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid Margin="5"/>
+                <Button Content="Listar Produtos" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30"/>
+
+                <TextBlock Text="Pesquisar" Grid.Row="2" Margin="15 0"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <Button Content="Ir" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30"/>
+                </StackPanel>
+                
+                <TextBlock Text="Quantidade" Grid.Row="1" Margin="15 0"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <Button Content="Comprar" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30"/>
+                </StackPanel>
+            </Grid>
         </GroupBox>
-        <GroupBox Header="Fornecedores" Margin="7" BorderThickness="0,0,0,0" Grid.Row="1">
-            <DataGrid Margin="0 5"/>
+
+        <GroupBox Header="Compras" Margin="10" Grid.Column="2">
+            <Grid>
+                <DataGrid Margin="5"/>
+            </Grid>
         </GroupBox>
-        <GroupBox Header="Produtos" Grid.Column="1" Margin="7" BorderThickness="0,0,0,0" Grid.Row="1">
-            <DataGrid Margin="0 5"/>
-        </GroupBox>
-        <TextBlock Text="Quantidade" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="14,2,0,0" />
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top"  Height="45" Margin="14,20,0,0" Grid.Row="2" Grid.Column="1" Width="105"/>
-        <Button Content="Comprar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Height="50" Grid.Row="2" Grid.Column="1" Margin="207,15,0,0"/>
+
     </Grid>
 </Window>
