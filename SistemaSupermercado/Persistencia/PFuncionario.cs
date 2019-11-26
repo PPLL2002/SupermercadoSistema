@@ -9,7 +9,6 @@ using Modelo;
 
 namespace Persistencia
 {
-{
     public class PFuncionario
     {
         private string arquivo = "funcionarios.xml";

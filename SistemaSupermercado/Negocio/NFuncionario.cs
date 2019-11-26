@@ -8,9 +8,9 @@ using Persistencia;
 
 namespace Negocio
 {
-    class NFuncionario
+    public class NFuncionario
     {
-        private List<Fornecedor> funcionarios = new List<Fornecedor>();
+        private List<Funcionario> funcionarios = new List<Funcionario>();
 
         public void Insert(Funcionario f)
         {
@@ -28,7 +28,7 @@ namespace Negocio
             PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
             for (int i = 0; i < funcionarios.Count; i++)
-                if (funcionarios[i].Id == f.Id)
+                if (funcionarios[i].IdSupermercado == f.IdSupermercado)
                 {
                     funcionarios.RemoveAt(i);
                     break;
@@ -38,15 +38,16 @@ namespace Negocio
         }
         public List<Funcionario> Select()
         {
+            PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
-            return pf.Open().OrderBy(c => c.Nome).ToList();
+            return pF.Open().OrderBy(c => c.Nome).ToList();
         }
         public void Delete(Funcionario f)
         {
             PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
             for (int i = 0; i < funcionarios.Count; i++)
-                if (funcionarios[i].Id == f.Id)
+                if (funcionarios[i].IdSupermercado == f.IdSupermercado)
                 {
                     funcionarios.RemoveAt(i);
                     break;

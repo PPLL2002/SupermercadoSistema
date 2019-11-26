@@ -27,6 +27,7 @@ namespace Visao
         }
 
         Funcionario f;
+        NFuncionario nF = new NFuncionario();
 
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
@@ -36,17 +37,26 @@ namespace Visao
         private void btnListarF(object sender, RoutedEventArgs e)
         {
             ListaFuncionarios.ItemsSource = null;
-            ListaFuncionarios.Items = f.Select();
+            ListaFuncionarios.ItemsSource = nF.Select();
         }
 
         private void btnDeletarF(object sender, RoutedEventArgs e)
         {
-
+            nF.Delete(f);
+            ListaFuncionarios.ItemsSource = null;
+            ListaFuncionarios.ItemsSource = nF.Select();
         }
 
         private void btnUpdateF(object sender, RoutedEventArgs e)
         {
+            nF.Update(f);
+            ListaFuncionarios.ItemsSource = null;
+            ListaFuncionarios.ItemsSource = nF.Select();
+        }
 
+        private void ListaFuncionarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListaFuncionarios.SelectedItem != null) f = ListaFuncionarios.SelectedItem as Funcionario;
         }
     }
 }
