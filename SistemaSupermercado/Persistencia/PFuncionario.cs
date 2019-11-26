@@ -9,22 +9,23 @@ using Modelo;
 
 namespace Persistencia
 {
-    public class PFornecedor
+{
+    public class PFuncionario
     {
-        private string arquivo = "fornecedores.xml";
-        public List<Fornecedor> Open()
+        private string arquivo = "funcionarios.xml";
+        public List<Funcionario> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Fornecedor>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
             StreamReader f = null;
-            List<Fornecedor> l = null;
+            List<Funcionario> l = null;
             try
             {
                 f = new StreamReader(arquivo, Encoding.Default);
-                l = x.Deserialize(f) as List<Fornecedor>;
+                l = x.Deserialize(f) as List<Funcionario>;
             }
             catch
             {
-                l = new List<Fornecedor>();
+                l = new List<Funcionario>();
             }
             finally
             {
@@ -32,9 +33,9 @@ namespace Persistencia
             }
             return l;
         }
-        public void Save(List<Fornecedor> l)
+        public void Save(List<Funcionario> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Fornecedor>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
             x.Serialize(f, l);
             f.Close();

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -22,6 +24,29 @@ namespace Visao
         public CrudFuncionario()
         {
             InitializeComponent();
+        }
+
+        Funcionario f;
+
+        private void btnInserirF(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnListarF(object sender, RoutedEventArgs e)
+        {
+            ListaFuncionarios.ItemsSource = null;
+            ListaFuncionarios.Items = f.Select();
+        }
+
+        private void btnDeletarF(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUpdateF(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
