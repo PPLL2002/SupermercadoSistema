@@ -95,10 +95,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FolhaPagamento.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,9 +124,6 @@
     </Compile>
     <Compile Include="CrudFuncionario.xaml.cs">
       <DependentUpon>CrudFuncionario.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="FolhaPagamento.xaml.cs">
-      <DependentUpon>FolhaPagamento.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
