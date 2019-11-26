@@ -67,9 +67,6 @@
     <Compile Include="TelaGerente.xaml.cs">
       <DependentUpon>TelaGerente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TelaOperadorCaixa.xaml.cs">
-      <DependentUpon>TelaOperadorCaixa.xaml</DependentUpon>
-    </Compile>
     <Page Include="CadastrarCompras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,10 +148,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TelaGerente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TelaOperadorCaixa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
