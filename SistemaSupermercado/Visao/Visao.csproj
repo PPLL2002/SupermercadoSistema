@@ -61,6 +61,15 @@
     <Compile Include="RelatorioEstoque.xaml.cs">
       <DependentUpon>RelatorioEstoque.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TelaAdm.xaml.cs">
+      <DependentUpon>TelaAdm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TelaGerente.xaml.cs">
+      <DependentUpon>TelaGerente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TelaOperadorCaixa.xaml.cs">
+      <DependentUpon>TelaOperadorCaixa.xaml</DependentUpon>
+    </Compile>
     <Page Include="CadastrarCompras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +143,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RelatorioEstoque.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TelaAdm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TelaGerente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TelaOperadorCaixa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
