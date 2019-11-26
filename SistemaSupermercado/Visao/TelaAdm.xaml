@@ -17,11 +17,11 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Content="Cadastrar Funcionários" Click="btnCadastrarF" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Listar Funcionários" Click="btnCadastrarF" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Folha de Pagamento" Click="btnCadastrarF" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Relátorio de Vendas" Click="btnCadastrarF" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Ticket Médio" Click="btnCadastrarF" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Cadastrar Funcionários" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Listar Funcionários" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Folha de Pagamento" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Relátorio de Vendas" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Ticket Médio" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
             </Grid>
         </GroupBox>
     </Grid>

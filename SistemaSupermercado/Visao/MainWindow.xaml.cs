@@ -28,7 +28,16 @@ namespace Visao
         private void EntrarDono(object sender, RoutedEventArgs e)
         {
             TelaAdm adm = new TelaAdm();
+            this.Close();
             adm.ShowDialog();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TelaGerente gerente = new TelaGerente();
+            this.Close();
+            gerente.ShowDialog();
+
         }
     }
 }

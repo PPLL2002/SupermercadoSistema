@@ -61,8 +61,8 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Content="Atualizar Produto" Click="AtualizarProduto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
-                <Button Content="Remover Produto" Click="DeletarProduto" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
+                <Button Content="Atualizar Produto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
+                <Button Content="Remover Produto" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
             </Grid>
         </GroupBox>
         <Grid Grid.Column="1" Margin="13,0,0,0">

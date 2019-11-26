@@ -36,7 +36,7 @@
                     <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                 </StackPanel>
 
-                <Button Click="InserirFornecedor" Content="Inserir" Grid.Row="3" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30"/>
+                <Button Content="Inserir" Grid.Row="3" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="30"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Operações" Grid.Column="1" Margin="10">
@@ -48,13 +48,13 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Click="InserirFornecedor" Content="Listar Fornecedores" Grid.Row="0" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
+                <Button Content="Listar Fornecedores" Grid.Row="0" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
 
-                <Button Click="InserirFornecedor" Content="Remover Fornecedor" Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
+                <Button Content="Remover Fornecedor" Grid.Row="1" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
 
-                <Button Click="InserirFornecedor" Content="Atualizar Fornecedor" Grid.Row="2" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
+                <Button Content="Atualizar Fornecedor" Grid.Row="2" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
 
-                <Button Click="InserirFornecedor" Content="Atualizar Produtos" Grid.Row="3" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
+                <Button Content="Atualizar Produtos" Grid.Row="3" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="30"/>
             </Grid>
         </GroupBox>
 

@@ -23,5 +23,11 @@ namespace Visao
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CadFornecedor f = new CadFornecedor();
+            f.ShowDialog();
+        }
     }
 }

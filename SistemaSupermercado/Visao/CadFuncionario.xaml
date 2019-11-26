@@ -23,8 +23,8 @@
                 </Grid.RowDefinitions>
 
                 <Image Grid.RowSpan="3" Margin="10" />
-                <Button Grid.Row="3" Click="InserirFoto" Content="Inserir Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
-                <Button Grid.Row="4" Click="AtualizarFoto" Content="Alterar Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
+                <Button Grid.Row="3" Content="Inserir Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
+                <Button Grid.Row="4" Content="Alterar Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
 
                 <StackPanel Grid.Column="1" Orientation="Vertical"  Margin="5 0">
                     <TextBlock Text="Nome " Margin="0 10"/>
@@ -67,7 +67,7 @@
                     </Grid>
                 </GroupBox>
 
-                <Button Grid.Row="3" Grid.Column="2" Click="InserirFuncionario" Content="Inserir" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Width="150" Height="30"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="Inserir" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Width="150" Height="30"/>
             </Grid>
         </GroupBox>
     </Grid>

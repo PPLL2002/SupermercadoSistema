@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Modelo;
 
 namespace Negocio
 {
@@ -23,10 +24,6 @@ namespace Negocio
             Venda v = new Venda();
             v.Data = DateTime.Now;
             v.Id = it.IdVenda;
-        }
-        public int Vender()
-        {
-
         }
     }
 }
