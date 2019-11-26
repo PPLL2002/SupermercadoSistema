@@ -24,5 +24,11 @@ namespace Visao
         {
             InitializeComponent();
         }
+
+        private void EntrarDono(object sender, RoutedEventArgs e)
+        {
+            TelaAdm adm = new TelaAdm();
+            adm.ShowDialog();
+        }
     }
 }
