@@ -14,10 +14,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock Text="MENU" VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Center"/>
-        <Button Content="Dono" Grid.Row="1" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" BorderThickness="2" HorizontalAlignment="Center"/>
-        <Button Content="Gerente" Grid.Row="2" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" BorderThickness="2" HorizontalAlignment="Center"/>
-        <Button Content="Operador de Caixa" Grid.Row="3" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" BorderThickness="2" HorizontalAlignment="Center"/>
-        <Button Content="Fornecedor" Grid.Row="4" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" BorderThickness="2" HorizontalAlignment="Center"/>
+        <TextBlock Text="Menu" VerticalAlignment="Center" FontSize="25" HorizontalAlignment="Center"/>
+        <Button Content="Dono" Click="EntrarDono" Grid.Row="1" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" HorizontalAlignment="Center"/>
+        <Button Content="Gerente" Click="EntrarGerente" Grid.Row="2" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" HorizontalAlignment="Center"/>
+        <Button Content="Operador de Caixa" Click="EntrarCaixa" Grid.Row="3" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" HorizontalAlignment="Center"/>
+        <Button Content="Fornecedor" Click="EntrarFornecedor" Grid.Row="4" VerticalAlignment="Center" FontSize="18" Height="48" Width="280" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
