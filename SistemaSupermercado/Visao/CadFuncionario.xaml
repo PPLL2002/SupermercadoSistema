@@ -1,0 +1,74 @@
+﻿<Window x:Class="Visao.CadFuncionario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Visao"
+        mc:Ignorable="d"
+        Title="RegistrarFuncionario2" Height="450" Width="800">
+    <Grid>
+        <GroupBox Header="Funcionário" Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Image Grid.RowSpan="3" Margin="10" />
+                <Button Grid.Row="3" Click="InserirFoto" Content="Inserir Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
+                <Button Grid.Row="4" Click="AtualizarFoto" Content="Alterar Foto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10" Width="150" Height="30"/>
+
+                <StackPanel Grid.Column="1" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="Nome " Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="Email " Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="Telefone " Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="CPF " Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Grid.Row="1" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="Numero da Conta " Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Vertical"  Margin="5 0">
+                    <TextBlock Text="Formação" Margin="0 10"/>
+                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                </StackPanel>
+
+                <GroupBox Header="Função" Margin="5" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <RadioButton Content="Gerente" VerticalAlignment="Center" Margin="5"/>
+                        <RadioButton Content="Oper. de Caixa" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
+                    </Grid>
+                </GroupBox>
+
+                <Button Grid.Row="3" Grid.Column="2" Click="InserirFuncionario" Content="Inserir" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" Width="150" Height="30"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
