@@ -17,10 +17,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Button Content="Inserir Funcionário" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="0" />
-        <Button Content="Listar Funcionários" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="1" />
-        <Button Content="Remover Funcionário" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="2" />
-        <Button Content="Atualizar Funcionário" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="3" />
+        <Button Content="Inserir Funcionário" Click="btnInserirF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="0" />
+        <Button Content="Listar Funcionários" Click="btnListarF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="1" />
+        <Button Content="Remover Funcionário" Click="btnDeletarF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="2" />
+        <Button Content="Atualizar Funcionário" Click="btnUpdateF" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Grid.Row="3" />
         <TextBlock Text="Funcionários" Grid.Column="1" Margin="10,10,-10,95" Grid.RowSpan="2"/>
         <DataGrid Name="ListaFuncionarios" Grid.Column="1" Grid.RowSpan="4" Margin="10,30,10,10" SelectionChanged="ListaFuncionarios_SelectionChanged"/>
     </Grid>

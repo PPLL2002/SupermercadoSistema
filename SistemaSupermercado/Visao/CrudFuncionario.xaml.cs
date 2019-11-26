@@ -31,7 +31,8 @@ namespace Visao
 
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
-
+            CadFuncionario CadF = new CadFuncionario();
+            CadF.ShowDialog();
         }
 
         private void btnListarF(object sender, RoutedEventArgs e)

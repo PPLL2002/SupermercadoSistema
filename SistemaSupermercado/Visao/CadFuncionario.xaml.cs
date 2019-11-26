@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -22,6 +24,24 @@ namespace Visao
         public CadFuncionario()
         {
             InitializeComponent();
+        }
+
+
+        private void btnInserirF(object sender, RoutedEventArgs e)
+        {
+            Funcionario f = new Funcionario();
+            f.Nome = fNome.Text;
+            f.Email = fEmail.Text;
+            f.Telefone = fTelefone.Text;
+            f.Cpf = fCpf.Text;
+            f.NumeroConta = fNConta.Text;
+            f.Formacao = fFormacao.Text;
+            f.DataIngresso = DateTime.Now;
+
+            NFuncionario nF = new NFuncionario();
+            nF.Insert(f);
+
+            this.Close();
         }
     }
 }
