@@ -17,7 +17,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Content="Cadastrar Funcionários" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Cadastrar Funcionários" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadFuncionario" />
                 <Button Content="Listar Funcionários" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
                 <Button Content="Folha de Pagamento" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
                 <Button Content="Relátorio de Vendas" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />

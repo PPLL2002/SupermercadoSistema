@@ -23,5 +23,11 @@ namespace Visao
         {
             InitializeComponent();
         }
+
+        private void btnCadFuncionario(object sender, RoutedEventArgs e)
+        {
+            CrudFuncionario f = new CrudFuncionario();
+            f.ShowDialog();
+        }
     }
 }
