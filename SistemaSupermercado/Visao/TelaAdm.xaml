@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="TelaAdm" Height="450" Width="250">
+        Title="TelaAdm" Height="400" Width="250">
     <Grid>
         <GroupBox Header="Dono" Margin="10">
             <Grid>
@@ -14,14 +14,12 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <Button Content="Cadastrar Funcionários" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadFuncionario" />
                 <Button Content="Listar Funcionários" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Folha de Pagamento" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Relátorio de Vendas" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Ticket Médio" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Relátorio de Vendas" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Ticket Médio" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
             </Grid>
         </GroupBox>
     </Grid>

@@ -16,9 +16,9 @@ namespace Negocio
         {
             PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
-            int i = 0;
-            foreach (Funcionario x in funcionarios) if (x.IdSupermercado > i) i = x.IdSupermercado;
-            f.IdSupermercado = i + 1;
+            int id = 1;
+            if (funcionarios.Count > 0) id = funcionarios.Max(x => x.IdSupermercado) + 1;
+            f.IdSupermercado = id;
             funcionarios.Add(f);
             pF.Save(funcionarios);
         }

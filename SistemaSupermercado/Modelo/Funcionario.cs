@@ -16,5 +16,6 @@ namespace Modelo
         public DateTime DataIngresso { get; set; }
         public string NumeroConta { get; set; }
         public int IdSupermercado { get; set; }
+        public string Foto { get; set; }
     }
 }
