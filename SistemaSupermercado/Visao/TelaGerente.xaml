@@ -16,10 +16,10 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Content="Cadastrar Fornecedores" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="Button_Click" />
-                <Button Content="Cadastrar Produtos" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Cadastrar Compras" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
-                <Button Content="Verificar Estoque" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" />
+                <Button Content="Cadastrar Fornecedores" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadastrarForne" />
+                <Button Content="Cadastrar Produtos" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadProd"/>
+                <Button Content="Cadastrar Compras" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadComp"/>
+                <Button Content="Verificar Estoque" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnEstoque"/>
             </Grid>
         </GroupBox>
     </Grid>

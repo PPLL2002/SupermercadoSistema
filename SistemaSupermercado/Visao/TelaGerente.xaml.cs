@@ -24,10 +24,28 @@ namespace Visao
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnCadastrarForne(object sender, RoutedEventArgs e)
         {
             CadFornecedor f = new CadFornecedor();
             f.ShowDialog();
+        }
+
+        private void btnCadProd(object sender, RoutedEventArgs e)
+        {
+            CadProdFornecedor cf = new CadProdFornecedor();
+            cf.ShowDialog();
+        }
+
+        private void btnCadComp(object sender, RoutedEventArgs e)
+        {
+            CadastrarCompras cc = new CadastrarCompras();
+            cc.ShowDialog();
+        }
+
+        private void btnEstoque(object sender, RoutedEventArgs e)
+        {
+            Estoque es = new Estoque();
+            es.ShowDialog();
         }
     }
 }

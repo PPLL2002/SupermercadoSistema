@@ -39,11 +39,10 @@ namespace Visao
             f.NumeroConta = fNConta.Text;
             f.Formacao = fFormacao.Text;
             f.DataIngresso = DateTime.Now;
-            f.Foto = foto;
-            if (btnGerente.Checked == true) f = f as Gerente;
-            else f = f as OperadorDeCaixa; 
+            f.Foto = foto; 
             NFuncionario nF = new NFuncionario();
-            nF.Insert(f);
+            bool ver = btnGerente.IsChecked == true ? true : false;
+            nF.Insert(f, ver);
             this.Close();
         }
 

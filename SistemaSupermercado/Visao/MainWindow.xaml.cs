@@ -32,11 +32,18 @@ namespace Visao
             adm.ShowDialog();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void EntrarGerente(object sender, RoutedEventArgs e)
         {
             TelaGerente gerente = new TelaGerente();
             this.Close();
             gerente.ShowDialog();
+        }
+
+        private void EntrarCaixa(object sender, RoutedEventArgs e)
+        {
+            CadastrarVendas cv = new CadastrarVendas();
+            this.Close();
+            cv.ShowDialog();
         }
     }
 }

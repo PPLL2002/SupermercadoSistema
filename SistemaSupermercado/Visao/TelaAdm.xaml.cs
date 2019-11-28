@@ -29,5 +29,11 @@ namespace Visao
             CrudFuncionario f = new CrudFuncionario();
             f.ShowDialog();
         }
+
+        private void btnRelatorio(object sender, RoutedEventArgs e)
+        {
+            RelatorioEstoque r = new RelatorioEstoque();
+            r.ShowDialog();
+        }
     }
 }
