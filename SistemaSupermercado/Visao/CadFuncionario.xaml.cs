@@ -30,6 +30,7 @@ namespace Visao
         }
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
+            
             Funcionario f = new Funcionario();
             f.Nome = fNome.Text;
             f.Email = fEmail.Text;
@@ -39,6 +40,8 @@ namespace Visao
             f.Formacao = fFormacao.Text;
             f.DataIngresso = DateTime.Now;
             f.Foto = foto;
+            if (btnGerente.Checked == true) f = f as Gerente;
+            else f = f as OperadorDeCaixa; 
             NFuncionario nF = new NFuncionario();
             nF.Insert(f);
             this.Close();
@@ -66,5 +69,7 @@ namespace Visao
         {
             this.Close();
         }
+
+        
     }
 }

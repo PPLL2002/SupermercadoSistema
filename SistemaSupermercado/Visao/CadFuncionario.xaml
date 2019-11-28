@@ -61,7 +61,7 @@
                             <ColumnDefinition />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
-                        <RadioButton Name="btnGerente" Content="Gerente" VerticalAlignment="Center" Margin="5"/>
+                        <RadioButton x:Name="btnGerente" Content="Gerente" VerticalAlignment="Center" Margin="5"/>
                         <RadioButton Name="btnCaixa" Content="Oper. de Caixa" Grid.Column="1" VerticalAlignment="Center" Margin="5"/>
                     </Grid>
                 </GroupBox>
