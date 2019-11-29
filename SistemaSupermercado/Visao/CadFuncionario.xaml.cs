@@ -41,8 +41,7 @@ namespace Visao
             f.DataIngresso = DateTime.Now;
             f.Foto = foto; 
             NFuncionario nF = new NFuncionario();
-            bool ver = btnGerente.IsChecked == true ? true : false;
-            nF.Insert(f, ver);
+            nF.Insert(f);
             this.Close();
         }
 
