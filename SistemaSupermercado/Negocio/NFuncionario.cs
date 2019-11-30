@@ -12,7 +12,7 @@ namespace Negocio
     {
         private List<Funcionario> funcionarios = new List<Funcionario>();
 
-        public void Insert(Funcionario f, bool funcao)
+        public void Insert(Funcionario f)
         {
             
             PFuncionario pF = new PFuncionario();
@@ -20,8 +20,6 @@ namespace Negocio
             int id = 1;
             if (funcionarios.Count > 0) id = funcionarios.Max(x => x.IdSupermercado) + 1;
             f.IdSupermercado = id;
-            if (funcao) f = f as Gerente;
-            else f = f as OperadorDeCaixa;
             funcionarios.Add(f);
             pF.Save(funcionarios);
         }

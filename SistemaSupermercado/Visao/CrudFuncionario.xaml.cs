@@ -50,9 +50,8 @@ namespace Visao
 
         private void btnUpdateF(object sender, RoutedEventArgs e)
         {
-            nF.Update(f);
-            CadFuncionario at = new CadFuncionario();
-            at.ShowDialog();
+            AtualizarFuncionario af = new AtualizarFuncionario(f);
+            af.ShowDialog();
             ListaFuncionarios.ItemsSource = null;
             ListaFuncionarios.ItemsSource = nF.Select();
         }

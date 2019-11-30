@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AtualizarFuncionario.xaml.cs">
+      <DependentUpon>AtualizarFuncionario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Estoque.xaml.cs">
       <DependentUpon>Estoque.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="TelaGerente.xaml.cs">
       <DependentUpon>TelaGerente.xaml</DependentUpon>
     </Compile>
+    <Page Include="AtualizarFuncionario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CadastrarCompras.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
