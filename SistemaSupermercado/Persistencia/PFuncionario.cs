@@ -12,6 +12,7 @@ namespace Persistencia
     public class PFuncionario
     {
         private string arquivo = "funcionarios.xml";
+
         public List<Funcionario> Open()
         {
             XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
@@ -32,6 +33,7 @@ namespace Persistencia
             }
             return l;
         }
+
         public void Save(List<Funcionario> l)
         {
             XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
