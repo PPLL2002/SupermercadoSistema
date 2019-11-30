@@ -8,7 +8,7 @@ using Persistencia;
 
 namespace Negocio
 {
-    class NFornecedor
+    public class NFornecedor
     {
         private List<Fornecedor> fornecedores = new List<Fornecedor>();
 
@@ -18,7 +18,7 @@ namespace Negocio
             fornecedores = pf.Open();
             int i = 0;
             foreach (Fornecedor x in fornecedores) if (Convert.ToInt32(x.Id) > i) i = Convert.ToInt32(x.Id);
-            f.Id = (i + 1).ToString();
+            f.Id = i + 1;
             fornecedores.Add(f);
             pf.Save(fornecedores);
         }
@@ -52,6 +52,18 @@ namespace Negocio
                     break;
                 }
             pf.Save(fornecedores);
+        }
+        public List<Fornecedor> Search(string nome)
+        {
+            PFornecedor pf = new PFornecedor();
+            fornecedores = pf.Open();
+            List<Fornecedor> retorno = new List<Fornecedor>();
+            foreach(Fornecedor f in fornecedores)
+            {
+                if (f.Nome == nome) retorno.Add(f);
+            }
+
+            return retorno;
         }
     }
 }

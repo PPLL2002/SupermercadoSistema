@@ -30,19 +30,27 @@ namespace Visao
         }
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
-            
-            Funcionario f = new Funcionario();
-            f.Nome = fNome.Text;
-            f.Email = fEmail.Text;
-            f.Telefone = fTelefone.Text;
-            f.Cpf = fCpf.Text;
-            f.NumeroConta = fNConta.Text;
-            f.Formacao = fFormacao.Text;
-            f.DataIngresso = DateTime.Now;
-            f.Foto = foto; 
-            NFuncionario nF = new NFuncionario();
-            nF.Insert(f);
-            this.Close();
+            try { 
+                Funcionario f = new Funcionario();
+                f.Nome = fNome.Text;
+                f.Email = fEmail.Text;
+                f.Telefone = fTelefone.Text;
+                f.Cpf = fCpf.Text;
+                f.NumeroConta = fNConta.Text;
+                f.Formacao = fFormacao.Text;
+                f.DataIngresso = DateTime.Now;
+                f.Foto = foto;
+                if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
+                if (btnGerente.IsChecked == true) f = new Gerente();
+                NFuncionario nF = new NFuncionario();
+                nF.Insert(f);
+                this.Close();
+            }
+            catch(ArgumentNullException)
+            {
+                MessageBox.Show("Preencha todos os campos!");
+            }
+
         }
 
         private void FotoClick(object sender, RoutedEventArgs e)

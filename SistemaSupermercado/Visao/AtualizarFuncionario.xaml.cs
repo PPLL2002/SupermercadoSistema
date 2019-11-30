@@ -35,6 +35,8 @@ namespace Visao
             fTelefone.Text = f.Telefone;
             fFormacao.Text = f.Formacao;
             fNConta.Text = f.NumeroConta;
+            if (funcio is Gerente) btnGerente.IsChecked = true;
+            if (funcio is OperadorDeCaixa) btnCaixa.IsChecked = true;
 
             byte[] b = Convert.FromBase64String(f.Foto);
 
@@ -82,8 +84,9 @@ namespace Visao
             funcio.Cpf = fCpf.Text;
             funcio.NumeroConta = fNConta.Text;
             funcio.Formacao = fFormacao.Text;
-            funcio.DataIngresso = DateTime.Now;
-            
+            if (btnCaixa.IsChecked == true) funcio = funcio as OperadorDeCaixa;
+            if (btnGerente.IsChecked == true) funcio = funcio as Gerente;
+
             nf.Update(funcio);
             this.Close();
         }

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -22,6 +24,66 @@ namespace Visao
         public CadFornecedor()
         {
             InitializeComponent();
+        }
+
+        Fornecedor f;
+        NFornecedor nF;
+
+        private void InserirFornecedor(object sender, RoutedEventArgs e)
+        {
+            f = new Fornecedor();
+            f.Nome = nomeForn.Text;
+            f.Email = emailForn.Text;
+            f.Categoria = categForn.Text;
+            nF = new NFornecedor();
+            nF.Insert(f);
+            CadProdFornecedor prodF = new CadProdFornecedor(f);
+            prodF.ShowDialog();
+        }
+
+        private void ListarFornecedores(object sender, RoutedEventArgs e)
+        {
+            nF = new NFornecedor();
+            listaFornecedores.ItemsSource = null;
+            listaFornecedores.ItemsSource = nF.Select();
+        }
+
+        private void RemoverFornecedor(object sender, RoutedEventArgs e)
+        {
+            nF = new NFornecedor();
+            nF.Delete(listaFornecedores.SelectedItem as Fornecedor);
+            listaFornecedores.ItemsSource = null;
+            listaFornecedores.ItemsSource = nF.Select();
+        }
+
+        private void AtualizarFornecedor(object sender, RoutedEventArgs e)
+        {
+            f.Nome = nomeForn.Text;
+            f.Email = emailForn.Text;
+            f.Categoria = categForn.Text;
+            nF = new NFornecedor();
+            nF.Update(f);
+        }
+
+        private void ListaFornecedores_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (listaFornecedores.SelectedItem != null)
+            {
+                f = listaFornecedores.SelectedItem as Fornecedor;
+                nomeForn.Text = f.Nome;
+                emailForn.Text = f.Email;
+                categForn.Text = f.Categoria;
+            }
+        }
+
+        private void ListaFornecedores_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (listaFornecedores.SelectedItem != null)
+            {
+                f = listaFornecedores.SelectedItem as Fornecedor;
+                CadProdFornecedor prodF = new CadProdFornecedor(f);
+                prodF.ShowDialog();
+            }
         }
     }
 }

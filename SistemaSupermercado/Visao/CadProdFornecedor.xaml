@@ -28,30 +28,30 @@
 
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0" >
                     <TextBlock Text="Nome " Margin="0 10"/>
-                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" TextWrapping="Wrap" />
+                    <TextBox Name="nomeProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" TextWrapping="Wrap" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0">
                     <TextBlock Text="Descrição" Margin="0 10"/>
-                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="50"  Width="150" TextWrapping="Wrap"/>
+                    <TextBox Name="descProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50"  Width="150" TextWrapping="Wrap"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0">
                     <TextBlock Text="Validade" Margin="0 10"/>
-                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <TextBox Name="validadeProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="3" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0">
                     <TextBlock Text="Quantidade" Margin="0 10"/>
-                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <TextBox Name="qntdProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="4" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0">
                     <TextBlock Text="Preço" Margin="0 10"/>
-                    <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
+                    <TextBox Name="precoProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                 </StackPanel>
 
-                <Button Content="Inserir" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="40" Grid.Row="5" Margin="10 0"/>
+                <Button Click="InserirProduto" Content="Inserir" HorizontalAlignment="Left" VerticalAlignment="Center" Width="150" Height="40" Grid.Row="5" Margin="10 0"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Operações" Margin="10" Grid.Row="1">
@@ -61,14 +61,14 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
 
-                <Button Content="Atualizar Produto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
-                <Button Content="Remover Produto" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" />
+                <Button Content="Atualizar Produto" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" Click="AtualizarProduto" />
+                <Button Content="Remover Produto" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="150" Height="30" Margin="10 0" Click="DeleteProduto" />
             </Grid>
         </GroupBox>
         <Grid Grid.Column="1" Margin="13,0,0,0">
-            <TextBlock Text="Lista de Fornecedores" FontSize="16" Margin="4,0,0,0"/>
-            <DataGrid HorizontalAlignment="Center" Width="320" Margin="0,22,13,15"/>
+            <TextBlock Text="Lista de Produtos" FontSize="16" Margin="15 0"/>
+            <DataGrid Name="listaProdutos"  HorizontalAlignment="Center" Width="340" Margin="10 25" IsReadOnly="True" SelectionChanged="ListaProdutos_SelectionChanged"/>
         </Grid>
-        <Button Content="Finalizar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="40" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        <Button Click="Fechar" Content="Finalizar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="150" Height="40" Grid.Row="1" Grid.Column="1" Margin="10"/>
     </Grid>
 </Window>

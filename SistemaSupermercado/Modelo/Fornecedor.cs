@@ -8,8 +8,23 @@ namespace Modelo
 {
     public class Fornecedor
     {
-        public string Nome { get; set; }
-        public string Email { get; set; }
-        public string Id { get; set; }
+        private string nome, email, categoria;
+        
+        public int Id { get; set; }
+        public string Nome
+        {
+            get { return nome; }
+            set { if (value != null && value != "") nome = value; else throw new ArgumentNullException(); }
+        }
+        public string Email
+        {
+            get { return email; }
+            set { if (value != null && value != "") email = value; else throw new ArgumentNullException(); }
+        }
+        public string Categoria
+        {
+            get { return categoria; }
+            set { if (value != null && value != "") categoria = value; else throw new ArgumentNullException(); }
+        }
     }
 }

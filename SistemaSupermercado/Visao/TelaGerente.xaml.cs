@@ -30,12 +30,6 @@ namespace Visao
             f.ShowDialog();
         }
 
-        private void btnCadProd(object sender, RoutedEventArgs e)
-        {
-            CadProdFornecedor cf = new CadProdFornecedor();
-            cf.ShowDialog();
-        }
-
         private void btnCadComp(object sender, RoutedEventArgs e)
         {
             CadastrarCompras cc = new CadastrarCompras();

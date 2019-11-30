@@ -14,7 +14,6 @@ namespace Negocio
 
         public void Insert(Funcionario f)
         {
-            
             PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
             int id = 1;
