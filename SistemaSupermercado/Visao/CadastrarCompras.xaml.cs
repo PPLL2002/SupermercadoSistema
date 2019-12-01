@@ -75,9 +75,10 @@ namespace Visao
             NItemCompra nIC = new NItemCompra();
             foreach(ItemCompra i in carrinho)
             {
-                i.IdCompra = c.Id;
+                i.SetIdCompra(c.Id);
                 nIC.Insert(i);
             }
+            carrinho.Clear();
             Carrinho.ItemsSource = null;
         }
 
@@ -91,7 +92,7 @@ namespace Visao
             ItemCompra iC = new ItemCompra();
             iC.Preco = pC.Preco;
             iC.Qtd = int.Parse(qtdCompra.Text);
-            iC.IdProduto = f.Id;
+            iC.IdProduto = pC.Id;
             carrinho.Add(iC);
             Carrinho.ItemsSource = null;
             Carrinho.ItemsSource = carrinho;
