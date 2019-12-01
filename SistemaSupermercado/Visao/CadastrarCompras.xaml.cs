@@ -29,8 +29,6 @@ namespace Visao
         NFornecedor nF;
         NProduto nP;
         Fornecedor f;
-        Produto p;
-
         private void ListarFornecedores(object sender, RoutedEventArgs e)
         {
             nF = new NFornecedor();
