@@ -46,24 +46,27 @@
                     <RowDefinition Height="0.75*"/>
                 </Grid.RowDefinitions>
 
-                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5"/>
-                <Button Click="ListarProdutos" Content="Listar Produtos" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30"/>
+                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar"/>
+                <Button Content="Adicionar ao Carrinho" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnAdiciocarCarrinho"/>
 
                 <TextBlock Text="Pesquisar" Grid.Row="2" Margin="15 0"/>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBox Name="pesqProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                     <Button Name="PesquisarProduto" Content="Ir" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30" Click="PesquisarProduto_Click"/>
                 </StackPanel>
-                
+
                 <TextBlock Text="Quantidade" Grid.Row="1" Margin="15 0"/>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Name="qntdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
-                    <Button Content="Comprar" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30"/>
+                    <TextBox Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150"/>
+                    <Button Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30" Click="btnComprar"/>
                 </StackPanel>
             </Grid>
         </GroupBox>
 
-        <GroupBox Header="Compras" Margin="10" Grid.Column="2">
+        <DataGrid IsReadOnly="True" Grid.Row="0" Grid.Column="2" Name="Carrinho" Margin="5,5,5,183"/>
+        <Button Content="Comprar" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" Width="200" Height="30" Click="btnComprar" Margin="29,291,35,144"/>
+
+        <GroupBox Header="Compras" Margin="9,326,11,8" Grid.Column="2" Grid.RowSpan="4">
             <Grid>
                 <DataGrid IsReadOnly="True" Name="listarCompras" Margin="5"/>
             </Grid>

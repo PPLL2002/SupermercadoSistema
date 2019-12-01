@@ -62,12 +62,41 @@ namespace Visao
             listaProdutos.ItemsSource = null;
             listaProdutos.ItemsSource = nP.Search(pesqProduto.Text, f.Id);
         }
+        Produto pC = new Produto();
 
-        private void ListarProdutos(object sender, RoutedEventArgs e)
+        List<ItemCompra> carrinho = new List<ItemCompra>();
+        private void btnComprar(object sender, RoutedEventArgs e)
         {
-            nP = new NProduto();
-            listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select(f.Id);
+            Compra c = new Compra();
+            c.IdFornecedor = f.Id;
+            c.Data = DateTime.Now;
+            NCompra nC = new NCompra();
+            nC.Insert(c);
+            NItemCompra nIC = new NItemCompra();
+            foreach(ItemCompra i in carrinho)
+            {
+                i.IdCompra = c.Id;
+                nIC.Insert(i);
+            }
+            Carrinho.ItemsSource = null;
         }
+
+        private void SelecionarProdutosParaComprar(object sender, SelectionChangedEventArgs e)
+        {
+            if (listaProdutos.SelectedItem != null) pC = listaProdutos.SelectedItem as Produto;
+        }
+
+        private void btnAdiciocarCarrinho(object sender, RoutedEventArgs e)
+        {
+            ItemCompra iC = new ItemCompra();
+            iC.Preco = pC.Preco;
+            iC.Qtd = int.Parse(qtdCompra.Text);
+            iC.IdProduto = f.Id;
+            carrinho.Add(iC);
+            Carrinho.ItemsSource = null;
+            Carrinho.ItemsSource = carrinho;
+        }
+
+      
     }
 }

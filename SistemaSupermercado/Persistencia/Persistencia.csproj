@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PCompra.cs" />
     <Compile Include="PFornecedor.cs" />
     <Compile Include="PFuncionario.cs" />
+    <Compile Include="PItemCompra.cs" />
     <Compile Include="PProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
