@@ -40,6 +40,9 @@ namespace Visao
                 f.Formacao = fFormacao.Text;
                 f.DataIngresso = DateTime.Now;
                 f.Foto = foto;
+                f.Login = fLogin.Text;
+                if (fSenha.Password == fConfSenha.Password) f.Senha = fSenha.ToString();
+                else throw new ArgumentException();
                 if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
                 if (btnGerente.IsChecked == true) f = new Gerente();
                 NFuncionario nF = new NFuncionario();
@@ -49,6 +52,12 @@ namespace Visao
             catch(ArgumentNullException)
             {
                 MessageBox.Show("Preencha todos os campos!");
+            }
+            catch (ArgumentException)
+            {
+                fSenha.Clear();
+                fConfSenha.Clear();
+                MessageBox.Show("As senhas não correspondem");
             }
 
         }
