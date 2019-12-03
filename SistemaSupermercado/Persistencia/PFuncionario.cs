@@ -15,7 +15,7 @@ namespace Persistencia
 
         public List<Funcionario> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>), new Type[] { typeof(Gerente), typeof(OperadorDeCaixa) });
             StreamReader f = null;
             List<Funcionario> l = null;
             try
@@ -36,8 +36,9 @@ namespace Persistencia
 
         public void Save(List<Funcionario> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>), new Type[] { typeof(Gerente), typeof(OperadorDeCaixa) });
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
+
             x.Serialize(f, l);
             f.Close();
         }

@@ -7,8 +7,6 @@ using System.Xml.Serialization;
 
 namespace Modelo
 {
-    [XmlInclude(typeof(Gerente))]
-    [XmlInclude(typeof(OperadorDeCaixa))]
     public class Funcionario
     {
         private string nome, email, telefone, cpf, formacao, nconta, foto, login, senha;

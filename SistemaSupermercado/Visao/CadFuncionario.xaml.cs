@@ -30,8 +30,10 @@ namespace Visao
         }
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
-            try { 
+            try {
                 Funcionario f = new Funcionario();
+                if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
+                else if (btnGerente.IsChecked == true) f = new Gerente();
                 f.Nome = fNome.Text;
                 f.Email = fEmail.Text;
                 f.Telefone = fTelefone.Text;
@@ -41,10 +43,8 @@ namespace Visao
                 f.DataIngresso = DateTime.Now;
                 f.Foto = foto;
                 f.Login = fLogin.Text;
-                if (fSenha.Password == fConfSenha.Password) f.Senha = fSenha.ToString();
+                if (fSenha.Password == fConfSenha.Password) f.Senha = fSenha.Password;
                 else throw new ArgumentException();
-                if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
-                if (btnGerente.IsChecked == true) f = new Gerente();
                 NFuncionario nF = new NFuncionario();
                 nF.Insert(f);
                 this.Close();
