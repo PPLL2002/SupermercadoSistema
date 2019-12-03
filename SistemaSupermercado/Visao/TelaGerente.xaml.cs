@@ -41,5 +41,7 @@ namespace Visao
             Estoque es = new Estoque();
             es.ShowDialog();
         }
+
+        
     }
 }

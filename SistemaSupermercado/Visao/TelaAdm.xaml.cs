@@ -35,5 +35,7 @@ namespace Visao
             RelatorioEstoque r = new RelatorioEstoque();
             r.ShowDialog();
         }
+
+
     }
 }

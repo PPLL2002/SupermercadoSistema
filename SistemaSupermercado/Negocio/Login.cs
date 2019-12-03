@@ -15,6 +15,11 @@ namespace Negocio
             PFuncionario pf = new PFuncionario();
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = pf.Open();
+            if(tipo == 0)
+            {
+                Dono d = new Dono();
+                if (d.Usuario == login && d.Senha == senha) return true;
+            }
             foreach(Funcionario f in funcionarios)
             {
                 if (f.Login == login && f.Senha == senha)

@@ -17,11 +17,25 @@ namespace Visao
     /// <summary>
     /// Lógica interna para Login.xaml
     /// </summary>
-    public partial class Login : Window
+    public partial class LoginWindow : Window
     {
-        public Login()
+
+        public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        public string Usuario { get => txtUsuario.Text; }
+        public string Senha { get => txtSenha.Password; }
+
+        private void btnEntrar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void btnCancelar(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }
