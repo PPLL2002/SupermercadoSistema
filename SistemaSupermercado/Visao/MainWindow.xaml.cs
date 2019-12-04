@@ -73,7 +73,7 @@ namespace Visao
 
         private void EntrarCaixa(object sender, RoutedEventArgs e)
         {
-            bool logou = false;
+           /* bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
@@ -82,15 +82,15 @@ namespace Visao
                     Login l = new Login();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 2);
                     if (logou)
-                    {
+                    {*/
                         CadastrarVendas cv = new CadastrarVendas();
                         this.Close();
                         cv.ShowDialog();
-                    }
+                    /*}
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);
+            } while (!logou);*/
         }
     }
 }

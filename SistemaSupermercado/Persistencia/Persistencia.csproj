@@ -41,12 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PItemVenda.cs" />
     <Compile Include="PCompra.cs" />
     <Compile Include="PFornecedor.cs" />
     <Compile Include="PFuncionario.cs" />
     <Compile Include="PItemCompra.cs" />
     <Compile Include="PProduto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PVenda.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
