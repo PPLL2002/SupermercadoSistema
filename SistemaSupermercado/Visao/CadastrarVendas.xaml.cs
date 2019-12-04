@@ -23,5 +23,20 @@ namespace Visao
         {
             InitializeComponent();
         }
+
+        private void btnIniciarVenda(object sender, RoutedEventArgs e)
+        {
+            Inicar.Visibility = Visibility.Hidden;
+            Cancelar.Visibility = Visibility.Visible;
+            Finalizar.Visibility = Visibility.Visible;
+            CancelarItem.Visibility = Visibility.Visible;
+        }
+        private void btnCancelarVenda(object sender, RoutedEventArgs e)
+        {
+            Inicar.Visibility = Visibility.Visible;
+            Cancelar.Visibility = Visibility.Hidden;
+            Finalizar.Visibility = Visibility.Hidden;
+            CancelarItem.Visibility = Visibility.Hidden;
+        }
     }
 }

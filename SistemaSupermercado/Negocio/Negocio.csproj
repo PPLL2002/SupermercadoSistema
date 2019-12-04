@@ -48,6 +48,7 @@
     <Compile Include="NItemCompra.cs" />
     <Compile Include="NItemVenda.cs" />
     <Compile Include="NProduto.cs" />
+    <Compile Include="NVenda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

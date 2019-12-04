@@ -32,9 +32,9 @@ namespace Persistencia
             }
             return l;
         } 
-        public void Save(List<Compra> l)
+        public void Save(List<Venda> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(Compra));
+            XmlSerializer x = new XmlSerializer(typeof(Venda));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
             x.Serialize(f, l);
             f.Close();
