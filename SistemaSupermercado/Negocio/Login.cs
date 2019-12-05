@@ -15,14 +15,15 @@ namespace Negocio
             PFuncionario pf = new PFuncionario();
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = pf.Open();
-            if(tipo == 0)
+            Criptografia crp = new Criptografia();
+            if (tipo == 0)
             {
                 Dono d = new Dono();
-                if (d.Usuario == login && d.Senha == senha) return true;
+                if (d.Usuario == login && crp.Criptografar(d.Senha) == senha) return true;
             }
             foreach(Funcionario f in funcionarios)
             {
-                if (f.Login == login && f.Senha == senha)
+                if (f.Login == login && crp.Criptografar(f.Senha) == senha)
                 {
                     if (tipo == 1)
                     {
@@ -42,11 +43,12 @@ namespace Negocio
             PFuncionario pf = new PFuncionario();
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = pf.Open();
+            Criptografia crp = new Criptografia();
             foreach (Funcionario f in funcionarios)
             {
                 if (f.Login == login)
                 {
-                    f.Senha = novasenha;
+                    f.Senha = crp.Criptografar(novasenha);
                     return true;
                 }
             }
