@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 
 namespace Negocio
 {
-    public class Criptografia
+    public class NCriptografia
     {
         public string Criptografar(string entrada)
         {

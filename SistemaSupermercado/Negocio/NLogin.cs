@@ -8,14 +8,14 @@ using Persistencia;
 
 namespace Negocio
 {
-    public class Login
+    public class NLogin
     {
         public bool VerificarSenha(string login, string senha, int tipo)
         {
             PFuncionario pf = new PFuncionario();
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = pf.Open();
-            Criptografia crp = new Criptografia();
+            NCriptografia crp = new NCriptografia();
             if (tipo == 0)
             {
                 Dono d = new Dono();
@@ -43,7 +43,7 @@ namespace Negocio
             PFuncionario pf = new PFuncionario();
             List<Funcionario> funcionarios = new List<Funcionario>();
             funcionarios = pf.Open();
-            Criptografia crp = new Criptografia();
+            NCriptografia crp = new NCriptografia();
             foreach (Funcionario f in funcionarios)
             {
                 if (f.Login == login)

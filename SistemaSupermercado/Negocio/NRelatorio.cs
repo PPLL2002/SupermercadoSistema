@@ -8,7 +8,7 @@ using Modelo;
 
 namespace Negocio
 {
-    public class Relatorio
+    public class NRelatorio
     {
         public decimal CalcularTicketMedio()
         {

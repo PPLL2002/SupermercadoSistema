@@ -43,7 +43,7 @@ namespace Visao
                 f.DataIngresso = DateTime.Now;
                 f.Foto = foto;
                 f.Login = fLogin.Text;
-                Criptografia crp = new Criptografia();
+                NCriptografia crp = new NCriptografia();
                 if (fSenha.Password == fConfSenha.Password) f.Senha = crp.Criptografar(fSenha.Password);
                 else throw new ArgumentException();
                 NFuncionario nF = new NFuncionario();
