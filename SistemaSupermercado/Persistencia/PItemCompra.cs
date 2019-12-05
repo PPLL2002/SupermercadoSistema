@@ -11,7 +11,7 @@ namespace Persistencia
 {
     public class PItemCompra
     {
-        private string arquivo = "itensVendidos.xml";
+        private string arquivo = "itens-comprados.xml";
 
         public List<ItemCompra> Open()
         {

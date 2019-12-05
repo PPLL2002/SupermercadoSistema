@@ -28,7 +28,7 @@ namespace Visao
 
         private void EntrarDono(object sender, RoutedEventArgs e)
         {
-            bool logou = false;
+            /*bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
@@ -38,20 +38,20 @@ namespace Visao
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 0);
                     if (logou)
                     {
-                        
+                        */
                         TelaAdm adm = new TelaAdm();
                         this.Close();
                         adm.Show();
-                    }
+                    /*}
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);
+            } while (!logou);*/
         }
 
         private void EntrarGerente(object sender, RoutedEventArgs e)
         {
-            bool logou = false;
+            /*bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
@@ -60,15 +60,15 @@ namespace Visao
                     Login l = new Login();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 1);
                     if (logou)
-                    {
+                    {*/
                         TelaGerente gerente = new TelaGerente();
                         this.Close();
                         gerente.ShowDialog();
-                    }
+                    /*}
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);
+            } while (!logou);*/
         }
 
         private void EntrarCaixa(object sender, RoutedEventArgs e)

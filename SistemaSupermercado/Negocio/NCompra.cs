@@ -26,7 +26,10 @@ namespace Negocio
         {
             PItemCompra pIC = new PItemCompra();
             List<ItemCompra> itens = pIC.Open();
-            foreach (ItemCompra i in itens) if (i.GetIdCompra() == c.Id) itens.Remove(i);
+            for(int k = 0; k < itens.Count; k++)
+            {
+                if (itens[k].IdCompra == c.Id) itens.RemoveAt(k);
+            }
             pIC.Save(itens);
             
             PCompra pC = new PCompra();
