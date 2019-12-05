@@ -17,9 +17,9 @@ namespace Visao
     /// <summary>
     /// Lógica interna para Estoque.xaml
     /// </summary>
-    public partial class Estoque : Window
+    public partial class WindowEstoque : Window
     {
-        public Estoque()
+        public WindowEstoque()
         {
             InitializeComponent();
         }
