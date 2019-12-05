@@ -104,12 +104,20 @@ namespace Visao
 
         private void btnComprar(object sender, RoutedEventArgs e)
         {
+            List<Produto> p = new List<Produto>();
+            NEstoque nE = new NEstoque();
+            IniciarCompra.Visibility = Visibility.Visible;
+            CancelarCompra.Visibility = Visibility.Hidden;
+
+            foreach(ItemCompra i in carrinho)
+            {
+                p = p.Where(x => x.Id == i.IdProduto).ToList();
+            }
+            nE.Insert(p);
+
             carrinho.Clear();
             Carrinho.ItemsSource = null;
 
-            IniciarCompra.Visibility = Visibility.Visible;
-            CancelarCompra.Visibility = Visibility.Hidden;
-       
         }
 
         private void btnRemoverItem(object sender, RoutedEventArgs e)

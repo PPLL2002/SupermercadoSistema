@@ -59,7 +59,7 @@
 
                 <TextBlock Text="Quantidade" Grid.Row="2" Margin="15 0"/>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox x:Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150"/>
+                    <TextBox x:Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="200"/>
                 </StackPanel>
             </Grid>
         </GroupBox>

@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NCriptografia.cs" />
+    <Compile Include="NEstoque.cs" />
     <Compile Include="NLogin.cs" />
     <Compile Include="NCompra.cs" />
     <Compile Include="NDono.cs" />
