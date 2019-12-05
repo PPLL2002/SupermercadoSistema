@@ -36,6 +36,10 @@ namespace Visao
             r.ShowDialog();
         }
 
-
+        private void btnAlterarDados(object sender, RoutedEventArgs e)
+        {
+            DadosDono dd = new DadosDono();
+            dd.ShowDialog();
+        }
     }
 }

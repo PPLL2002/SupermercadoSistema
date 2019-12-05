@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PDono.cs" />
     <Compile Include="PItemVenda.cs" />
     <Compile Include="PCompra.cs" />
     <Compile Include="PFornecedor.cs" />

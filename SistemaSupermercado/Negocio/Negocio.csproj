@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Login.cs" />
     <Compile Include="NCompra.cs" />
+    <Compile Include="NDono.cs" />
     <Compile Include="NFornecedor.cs" />
     <Compile Include="NFuncionario.cs" />
     <Compile Include="NItemCompra.cs" />

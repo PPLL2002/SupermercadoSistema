@@ -5,17 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="TelaAdm" Height="200" Width="250">
+        Title="TelaAdm" Height="300" Width="250">
     <Grid>
         <GroupBox Header="Dono" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <Button Content="Gerenciar Funcionários" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadFuncionario" />
                 <Button Content="Relátorio de Vendas" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnRelatorio"/>
+                <Button Content="Alterar Dados" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnAlterarDados" />
             </Grid>
         </GroupBox>
     </Grid>

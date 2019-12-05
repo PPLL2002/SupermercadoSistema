@@ -58,8 +58,11 @@
     <Compile Include="AtualizarFuncionario.xaml.cs">
       <DependentUpon>AtualizarFuncionario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Estoque.xaml.cs">
-      <DependentUpon>Estoque.xaml</DependentUpon>
+    <Compile Include="DadosDono.xaml.cs">
+      <DependentUpon>DadosDono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowEstoque.xaml.cs">
+      <DependentUpon>WindowEstoque.xaml</DependentUpon>
     </Compile>
     <Compile Include="RelatorioEstoque.xaml.cs">
       <DependentUpon>RelatorioEstoque.xaml</DependentUpon>
@@ -98,7 +101,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Estoque.xaml">
+    <Page Include="DadosDono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowEstoque.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

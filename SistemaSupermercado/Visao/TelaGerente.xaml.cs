@@ -38,7 +38,7 @@ namespace Visao
 
         private void btnEstoque(object sender, RoutedEventArgs e)
         {
-            Estoque es = new Estoque();
+            WindowEstoque es = new WindowEstoque();
             es.ShowDialog();
         }
 
