@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Modelo;
-using Persistencia;
+using Negocio;
 
 namespace Visao
 {
@@ -21,11 +21,13 @@ namespace Visao
     /// </summary>
     public partial class DadosDono : Window
     {
-        Dono d = new Dono();
-        PDono pD = new PDono();
+        Dono d;
+        NDono nD;
         public DadosDono()
         {
             InitializeComponent();
+            nD = new NDono();
+            d = nD.Listar();
             nomeAdm.Text = d.Nome;
             cpfAdm.Text = d.Cpf;
         }
@@ -34,6 +36,8 @@ namespace Visao
         {
             d.Nome = nomeAdm.Text;
             d.Cpf = cpfAdm.Text;
+            nD = new NDono();
+            nD.Update(d);
             this.Close();
         }
 
