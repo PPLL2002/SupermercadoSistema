@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -23,20 +25,31 @@ namespace Visao
         {
             InitializeComponent();
         }
-
+        Venda v;
+        NVenda nV;
+        List<ItemVenda> carrinho;
         private void btnIniciarVenda(object sender, RoutedEventArgs e)
         {
+            v = new Venda();
+            v.Data = DateTime.Now;
+            nV = new NVenda();
+            nV.Insert(v);
+
             Inicar.Visibility = Visibility.Hidden;
             Cancelar.Visibility = Visibility.Visible;
             Finalizar.Visibility = Visibility.Visible;
             CancelarItem.Visibility = Visibility.Visible;
+            VenderProd.Visibility = Visibility.Visible;
         }
         private void btnCancelarVenda(object sender, RoutedEventArgs e)
         {
+            nV = new NVenda();
+            nV.
             Inicar.Visibility = Visibility.Visible;
             Cancelar.Visibility = Visibility.Hidden;
             Finalizar.Visibility = Visibility.Hidden;
             CancelarItem.Visibility = Visibility.Hidden;
+            VenderProd.Visibility = Visibility.Hidden;
         }
     }
 }

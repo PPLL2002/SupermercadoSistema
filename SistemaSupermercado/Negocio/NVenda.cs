@@ -22,5 +22,23 @@ namespace Negocio
             vendas.Add(v);
             p.Save(vendas);
         }
+        public void Delete(Venda c)
+        {
+            PItemVenda pIC = new PItemVenda();
+            NItemVenda nIC = new NItemVenda();
+            List<ItemVenda> lIC = pIC.Open();
+            foreach (ItemVenda i in lIC) if (i.IdVenda == c.Id) nIC.Delete(i);
+
+            PVenda pC = new PVenda();
+            vendas = pC.Open();
+
+            for (int i = 0; i < vendas.Count; i++)
+                if (vendas[i].Id == c.Id)
+                {
+                    vendas.RemoveAt(i);
+                    break;
+                }
+            pC.Save(vendas);
+        }
     }
 }

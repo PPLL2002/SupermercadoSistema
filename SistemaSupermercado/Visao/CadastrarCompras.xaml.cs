@@ -96,7 +96,10 @@ namespace Visao
 
             IniciarCompra.Visibility = Visibility.Visible;
             CancelarCompra.Visibility = Visibility.Hidden;
-           
+
+            nP = new NProduto();
+            listaProdutos.ItemsSource = null;
+            listaProdutos.ItemsSource = nP.Select();
         }
 
         private void btnComprar(object sender, RoutedEventArgs e)
@@ -113,7 +116,7 @@ namespace Visao
         {
             carrinho.Remove(itemC);
             NItemCompra nIC = new NItemCompra();
-            /*nIC.Delete(itemC);*/
+            nIC.Delete(itemC);
 
             Carrinho.ItemsSource = null;
             Carrinho.ItemsSource = carrinho;

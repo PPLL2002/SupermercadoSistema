@@ -25,19 +25,25 @@ namespace Negocio
             nP.Update(p);
             
             }
-        }
-        /*public void Delete(ItemCompra i)
+        public void Delete(ItemCompra i)
         {
             PItemCompra pF = new PItemCompra();
             itens = pF.Open();
-            for (int l = 0; l < itens.Count; l++) { 
+            for (int l = 0; l < itens.Count; l++)
+            {
                 if (itens[l].IdProduto == i.IdProduto && itens[l].IdCompra == i.IdCompra)
                 {
-                    
+                    PProduto pP = new PProduto();
+                    List<Produto> pro = pP.Open();
+                    Produto p = pro.Where(x => x.Id == i.IdProduto).Single();
+                    p.Qtd += i.Qtd;
+                    NProduto nP = new NProduto();
+                    nP.Update(p);
                     itens.RemoveAt(l);
                     break;
                 }
             }
             pF.Save(itens);
-        }*/
+        }
     }
+}
