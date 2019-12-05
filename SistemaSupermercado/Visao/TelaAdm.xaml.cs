@@ -35,5 +35,11 @@ namespace Visao
             RelatorioEstoque r = new RelatorioEstoque();
             r.ShowDialog();
         }
+
+        private void btnAlterarDados(object sender, RoutedEventArgs e)
+        {
+            DadosDono dd = new DadosDono();
+            dd.ShowDialog();
+        }
     }
 }

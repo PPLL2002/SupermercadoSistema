@@ -44,33 +44,46 @@
                     <RowDefinition Height="0.75*"/>
                     <RowDefinition Height="0.75*"/>
                     <RowDefinition Height="0.75*"/>
+                    <RowDefinition Height="0.75*"/>
                 </Grid.RowDefinitions>
 
-                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar"/>
-                <Button Content="Adicionar ao Carrinho" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnAdiciocarCarrinho"/>
+                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar" MouseDoubleClick="ListaProdutos_MouseDoubleClick"/>
+                <Button x:Name="CancelarCompra" Content="Cancelar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnCancelarCompra" Visibility="Hidden"/>
+                <Button x:Name="IniciarCompra" Content="Iniciar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnIniciarCompra" />
 
-                <TextBlock Text="Pesquisar" Grid.Row="2" Margin="15 0"/>
-                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Pesquisar" Grid.Row="1" Margin="15 0"/>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBox Name="pesqProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                     <Button Name="PesquisarProduto" Content="Ir" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30" Click="PesquisarProduto_Click"/>
                 </StackPanel>
 
-                <TextBlock Text="Quantidade" Grid.Row="1" Margin="15 0"/>
-                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150"/>
-                    <Button Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30" Click="btnComprar"/>
+                <TextBlock Text="Quantidade" Grid.Row="2" Margin="15 0"/>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox x:Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="200"/>
                 </StackPanel>
             </Grid>
         </GroupBox>
 
-        <DataGrid IsReadOnly="True" Grid.Row="0" Grid.Column="2" Name="Carrinho" Margin="5,5,5,183"/>
-        <Button Content="Comprar" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" Width="200" Height="30" Click="btnComprar" Margin="29,291,35,144"/>
-
-        <GroupBox Header="Compras" Margin="9,326,11,8" Grid.Column="2" Grid.RowSpan="4">
+        <Grid Grid.Column="2" Grid.RowSpan="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height=".3*"/>
+                <RowDefinition Height="1.2*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="Carrinho">
+                <Grid>
+                    <DataGrid IsReadOnly="True" x:Name="Carrinho" Margin="5" SelectionChanged="SelecionarItemCompra"/>
+                </Grid>
+            </GroupBox>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <Button Content="Finalizar Compra" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="30" Click="btnComprar" />
+                <Button Content="Remover item" VerticalAlignment="Center" HorizontalAlignment="Center"  Width="200" Height="30" Click="btnRemoverItem" Margin="0,10,0,0"/>
+        </StackPanel>
+        <GroupBox Header="Compras" Grid.Row="2">
             <Grid>
                 <DataGrid IsReadOnly="True" Name="listarCompras" Margin="5"/>
             </Grid>
         </GroupBox>
-
+        </Grid>
     </Grid>
 </Window>

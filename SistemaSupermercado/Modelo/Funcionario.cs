@@ -7,11 +7,9 @@ using System.Xml.Serialization;
 
 namespace Modelo
 {
-    [XmlInclude(typeof(Gerente))]
-    [XmlInclude(typeof(OperadorDeCaixa))]
     public class Funcionario
     {
-        private string nome, email, telefone, cpf, formacao, nconta, foto;
+        private string nome, email, telefone, cpf, formacao, nconta, foto, login, senha;
 
         public int IdSupermercado { get; set; }
         public DateTime DataIngresso { get; set; }
@@ -49,6 +47,16 @@ namespace Modelo
         {
             get { return foto; }
             set { if (value != null && value != "") foto = value; else throw new ArgumentNullException(); }
+        }
+        public string Login
+        {
+            get { return login; }
+            set { if (value != null && value != "") login = value; else throw new ArgumentNullException(); }
+        }
+        public string Senha
+        {
+            get { return senha; }
+            set { if (value != null && value != "") senha = value; else throw new ArgumentNullException(); }
         }
     }
 }

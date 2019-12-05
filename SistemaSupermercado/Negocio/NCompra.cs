@@ -25,9 +25,9 @@ namespace Negocio
         public void Delete(Compra c)
         {
             PItemCompra pIC = new PItemCompra();
-            List<ItemCompra> itens = pIC.Open();
-            foreach (ItemCompra i in itens) if (i.GetIdCompra() == c.Id) itens.Remove(i);
-            pIC.Save(itens);
+            NItemCompra nIC = new NItemCompra();
+            List<ItemCompra> lIC = pIC.Open();
+            foreach (ItemCompra i in lIC) if (i.IdCompra == c.Id) nIC.Delete(i);
             
             PCompra pC = new PCompra();
             compras = pC.Open();

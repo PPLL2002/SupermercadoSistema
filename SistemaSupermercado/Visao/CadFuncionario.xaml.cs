@@ -30,8 +30,10 @@ namespace Visao
         }
         private void btnInserirF(object sender, RoutedEventArgs e)
         {
-            try { 
+            try {
                 Funcionario f = new Funcionario();
+                if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
+                else if (btnGerente.IsChecked == true) f = new Gerente();
                 f.Nome = fNome.Text;
                 f.Email = fEmail.Text;
                 f.Telefone = fTelefone.Text;
@@ -40,8 +42,10 @@ namespace Visao
                 f.Formacao = fFormacao.Text;
                 f.DataIngresso = DateTime.Now;
                 f.Foto = foto;
-                if (btnCaixa.IsChecked == true) f = new OperadorDeCaixa();
-                if (btnGerente.IsChecked == true) f = new Gerente();
+                f.Login = fLogin.Text;
+                NCriptografia crp = new NCriptografia();
+                if (fSenha.Password == fConfSenha.Password) f.Senha = crp.Criptografar(fSenha.Password);
+                else throw new ArgumentException();
                 NFuncionario nF = new NFuncionario();
                 nF.Insert(f);
                 this.Close();
@@ -49,6 +53,12 @@ namespace Visao
             catch(ArgumentNullException)
             {
                 MessageBox.Show("Preencha todos os campos!");
+            }
+            catch (ArgumentException)
+            {
+                fSenha.Clear();
+                fConfSenha.Clear();
+                MessageBox.Show("As senhas não correspondem");
             }
 
         }

@@ -1,44 +1,42 @@
-﻿using Modelo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using Modelo;
 
 namespace Persistencia
 {
-    public class PItemCompra
+    public class PDono
     {
-        private string arquivo = "itens-comprados.xml";
-
-        public List<ItemCompra> Open()
+        private string arquivo = "dono.xml";
+        public Dono Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<ItemCompra>));
+            XmlSerializer x = new XmlSerializer(typeof(Dono));
             StreamReader f = null;
-            List<ItemCompra> p = null;
+            Dono d = null;
             try
             {
                 f = new StreamReader(arquivo, Encoding.Default);
-                p = x.Deserialize(f) as List<ItemCompra>;
+                d = x.Deserialize(f) as Dono;
             }
             catch
             {
-                p = new List<ItemCompra>();
+                d = new Dono();
             }
             finally
             {
                 if (f != null) f.Close();
             }
-            return p;
+            return d;
         }
-
-        public void Save(List<ItemCompra> l)
+        public void Save(Dono d)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<ItemCompra>));
+            XmlSerializer x = new XmlSerializer(typeof(Dono));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
-            x.Serialize(f, l);
+            x.Serialize(f, d);
             f.Close();
         }
     }

@@ -49,6 +49,12 @@ namespace Negocio
 
             return prod.OrderBy(c => c.Descricao).ToList();
         }
+        public List<Produto> Select()
+        {
+            PProduto pP = new PProduto();
+            produtos = pP.Open();
+            return produtos.OrderBy(c => c.Descricao).ToList();
+        }
         public void Delete(Produto p)
         {
             PProduto pP = new PProduto();
@@ -72,5 +78,14 @@ namespace Negocio
             }
             return retorno;
         }
+        /*public void UpdateQtd()
+        {
+            PItemCompra pIC = new PItemCompra();
+            List<ItemCompra> lIC = pIC.Open();
+            foreach(ItemCompra k in lIC)
+            {
+                for(int i = 0; i < )
+            }
+        }*/
     }
 }

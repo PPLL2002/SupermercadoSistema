@@ -9,34 +9,32 @@ using System.Xml.Serialization;
 
 namespace Persistencia
 {
-    public class PItemCompra
+    public class PItemVenda
     {
-        private string arquivo = "itens-comprados.xml";
-
-        public List<ItemCompra> Open()
+        private string arquivo = "itens_vendas.xml";
+        public List<ItemVenda> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<ItemCompra>));
+            XmlSerializer x = new XmlSerializer(typeof(ItemVenda));
             StreamReader f = null;
-            List<ItemCompra> p = null;
+            List<ItemVenda> l = null;
             try
             {
                 f = new StreamReader(arquivo, Encoding.Default);
-                p = x.Deserialize(f) as List<ItemCompra>;
+                l = x.Deserialize(f) as List<ItemVenda>;
             }
             catch
             {
-                p = new List<ItemCompra>();
+                l = new List<ItemVenda>();
             }
             finally
             {
                 if (f != null) f.Close();
             }
-            return p;
+            return l;
         }
-
-        public void Save(List<ItemCompra> l)
+        public void Save(List<ItemVenda> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<ItemCompra>));
+            XmlSerializer x = new XmlSerializer(typeof(ItemVenda));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
             x.Serialize(f, l);
             f.Close();
