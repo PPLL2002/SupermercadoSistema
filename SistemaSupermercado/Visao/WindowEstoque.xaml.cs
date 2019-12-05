@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -22,6 +24,47 @@ namespace Visao
         public WindowEstoque()
         {
             InitializeComponent();
+            ne = new NEstoque();
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.Select();
+        }
+
+        Produto p;
+        NEstoque ne;
+
+        private void ListaProdutos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListaProdutos.SelectedItem != null) p = ListaProdutos.SelectedItem as Produto;
+        }
+
+        private void btnDelete(object sender, RoutedEventArgs e)
+        {
+            ne = new NEstoque();
+            ne.Delete(p);
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.Select();
+        }
+
+        private void btnVencidos(object sender, RoutedEventArgs e)
+        {
+            ne = new NEstoque();
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.VerificarValidade();
+        }
+
+        private void btnSearch(object sender, RoutedEventArgs e)
+        {
+            ne = new NEstoque();
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.Search(DateTime.Parse(validadeProduto.Text));
+        }
+
+        private void btnPreco(object sender, RoutedEventArgs e)
+        {
+            ne = new NEstoque();
+            ne.AlterarPreco(p, decimal.Parse(novoPreco.Text));
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.Select();
         }
     }
 }

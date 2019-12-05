@@ -5,16 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="VerificarEstoque" Height="700" Width="570">
+        Title="VerificarEstoque" Height="800" Width="570">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Margin="10"/>
+        <DataGrid Name="ListaProdutos" Margin="10" SelectionChanged="ListaProdutos_SelectionChanged"/>
         <GroupBox Grid.Row="1" Margin="7" Header="Vefificar Estoque">
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
@@ -22,12 +23,19 @@
                     <ColumnDefinition />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Remover" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Margin="0,0,0,0"/>
-                <Button Content="Produtos Vencidos" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="50" Margin="0,0,0,0" Grid.Column="1"/>
-                <Button Content="Pesquisar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="50" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1"/>
-                <TextBlock Text="Data de Vencimento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="47,7,0,0" Grid.Row="1" />
-                <TextBox HorizontalAlignment="Center" VerticalAlignment="Center"  Height="45" Margin="0,0,1,0" Grid.Row="1" Width="220"/>
-
+                <Button Content="Remover" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Margin="0,0,0,0" Click="btnDelete"/>
+                <Button Content="Produtos Vencidos" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="50" Margin="0,0,0,0" Grid.Column="1" Click="btnVencidos"/>
+                <Button Content="Pesquisar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="50" Margin="0,0,0,0" Grid.Column="1" Grid.Row="1" Click="btnSearch"/>
+                <Button Content="Alterar Preço" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="50" Margin="0,0,0,0" Grid.Column="1" Grid.Row="2" Click="btnPreco"/>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Row="1"  HorizontalAlignment="Center"  >
+                    <TextBlock FontSize="13" Text="Validade" Margin="0 10"/>
+                    <TextBox Name="validadeProduto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35"  Width="220" TextWrapping="Wrap" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" Grid.Row="2"  HorizontalAlignment="Center"  >
+                    <TextBlock FontSize="13" Text="Preço" Margin="0 10"/>
+                    <TextBox Name="novoPreco" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35"  Width="220" TextWrapping="Wrap" />
+                </StackPanel>
+                
             </Grid>
         </GroupBox>
     </Grid>
