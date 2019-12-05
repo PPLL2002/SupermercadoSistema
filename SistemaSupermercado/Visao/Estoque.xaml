@@ -19,7 +19,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1.4*"/>
+                    <ColumnDefinition />
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Remover" HorizontalAlignment="Center" VerticalAlignment="Center" Width="222" Height="50" Margin="0,0,0,0"/>
