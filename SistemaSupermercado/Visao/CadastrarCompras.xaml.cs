@@ -83,10 +83,52 @@ namespace Visao
 
             IniciarCompra.Visibility = Visibility.Hidden;
             CancelarCompra.Visibility = Visibility.Visible;
-            AddCarrinho.IsEnabled = true;
+         
         }
 
-        private void btnAdiciocarCarrinho(object sender, RoutedEventArgs e)
+        private void btnCancelarCompra(object sender, RoutedEventArgs e)
+        {
+            NCompra nC = new NCompra();
+            nC.Delete(c);
+
+            carrinho.Clear();
+            Carrinho.ItemsSource = null;
+
+            IniciarCompra.Visibility = Visibility.Visible;
+            CancelarCompra.Visibility = Visibility.Hidden;
+           
+        }
+
+        private void btnComprar(object sender, RoutedEventArgs e)
+        {
+            carrinho.Clear();
+            Carrinho.ItemsSource = null;
+
+            IniciarCompra.Visibility = Visibility.Visible;
+            CancelarCompra.Visibility = Visibility.Hidden;
+       
+        }
+
+        private void btnRemoverItem(object sender, RoutedEventArgs e)
+        {
+            carrinho.Remove(itemC);
+            NItemCompra nIC = new NItemCompra();
+            /*nIC.Delete(itemC);*/
+
+            Carrinho.ItemsSource = null;
+            Carrinho.ItemsSource = carrinho;
+
+            nP = new NProduto();
+            listaProdutos.ItemsSource = null;
+            listaProdutos.ItemsSource = nP.Select();
+        }
+
+        private void SelecionarItemCompra(object sender, SelectionChangedEventArgs e)
+        {
+            if (Carrinho.SelectedItem != null) itemC = Carrinho.SelectedItem as ItemCompra;
+        }
+
+        private void ListaProdutos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             ItemCompra iC = new ItemCompra();
             iC.Preco = pC.Preco;
@@ -105,48 +147,6 @@ namespace Visao
             nP = new NProduto();
             listaProdutos.ItemsSource = null;
             listaProdutos.ItemsSource = nP.Select();
-        }
-
-        private void btnCancelarCompra(object sender, RoutedEventArgs e)
-        {
-            NCompra nC = new NCompra();
-            nC.Delete(c);
-
-            carrinho.Clear();
-            Carrinho.ItemsSource = null;
-
-            IniciarCompra.Visibility = Visibility.Visible;
-            CancelarCompra.Visibility = Visibility.Hidden;
-            AddCarrinho.IsEnabled = false;
-        }
-
-        private void btnComprar(object sender, RoutedEventArgs e)
-        {
-            carrinho.Clear();
-            Carrinho.ItemsSource = null;
-
-            IniciarCompra.Visibility = Visibility.Visible;
-            CancelarCompra.Visibility = Visibility.Hidden;
-            AddCarrinho.IsEnabled = false;
-        }
-
-        private void btnRemoverItem(object sender, RoutedEventArgs e)
-        {
-            carrinho.Remove(itemC);
-            NItemCompra nIC = new NItemCompra();
-            nIC.Delete(itemC);
-
-            Carrinho.ItemsSource = null;
-            Carrinho.ItemsSource = carrinho;
-
-            nP = new NProduto();
-            listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select();
-        }
-
-        private void SelecionarItemCompra(object sender, SelectionChangedEventArgs e)
-        {
-            if (Carrinho.SelectedItem != null) itemC = Carrinho.SelectedItem as ItemCompra;
         }
     }
 }

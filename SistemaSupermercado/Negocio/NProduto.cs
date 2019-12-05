@@ -78,5 +78,14 @@ namespace Negocio
             }
             return retorno;
         }
+        /*public void UpdateQtd()
+        {
+            PItemCompra pIC = new PItemCompra();
+            List<ItemCompra> lIC = pIC.Open();
+            foreach(ItemCompra k in lIC)
+            {
+                for(int i = 0; i < )
+            }
+        }*/
     }
 }

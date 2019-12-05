@@ -47,7 +47,7 @@
                     <RowDefinition Height="0.75*"/>
                 </Grid.RowDefinitions>
 
-                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar"/>
+                <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar" MouseDoubleClick="ListaProdutos_MouseDoubleClick"/>
                 <Button x:Name="CancelarCompra" Content="Cancelar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnCancelarCompra" Visibility="Hidden"/>
                 <Button x:Name="IniciarCompra" Content="Iniciar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnIniciarCompra" />
 
@@ -59,8 +59,7 @@
 
                 <TextBlock Text="Quantidade" Grid.Row="2" Margin="15 0"/>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBox Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150"/>
-                    <Button x:Name="AddCarrinho" Content="Ok" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Width="50" Height="30" Click="btnAdiciocarCarrinho" IsEnabled="False"/>
+                    <TextBox x:Name="qtdCompra" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150"/>
                 </StackPanel>
             </Grid>
         </GroupBox>
