@@ -80,15 +80,33 @@ namespace Visao
 
         private void SelecionarItemParaAddCarrinho(object sender, MouseButtonEventArgs e)
         {
-            ItemVenda iv = new ItemVenda();
-            iv.IdProduto = p.Id;
-            iv.IdVenda = v.Id;
-            iv.Preco = p.Id;
-            iv.Qtd = int.Parse(qtd.Text);
-            NItemVenda nIV = new NItemVenda();
-            nIV.Insert(iv);
-
-            carrinho.Add(iv);
+            try
+            {
+                ItemVenda iv = new ItemVenda();
+                iv.IdProduto = p.Id;
+                iv.IdVenda = v.Id;
+                iv.Preco = p.Id;
+                iv.Qtd = int.Parse(qtd.Text);
+                NItemVenda nIV = new NItemVenda();
+                nIV.Insert(iv);
+                carrinho.Add(iv);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Quantidade inválida");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Insira uma quantidade disponivel");
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Insira uma quantidade disponivel");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Inicie uma venda para comprar produtos");
+            }
 
             Carrinho.ItemsSource = null;
             Carrinho.ItemsSource = carrinho;
