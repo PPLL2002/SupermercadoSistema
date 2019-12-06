@@ -30,5 +30,23 @@ namespace Visao
             NRelatorio rela = new NRelatorio();
             Caixa.Text = "R$ " + rela.CalcularCusto().ToString();
         }
+
+        private void btnReceitaTotal(object sender, RoutedEventArgs e)
+        {
+            NRelatorio rela = new NRelatorio();
+            Caixa.Text = "R$ " + rela.CalcularReceita().ToString();
+        }
+
+        private void btnLucroTotal(object sender, RoutedEventArgs e)
+        {
+            NRelatorio rela = new NRelatorio();
+            Caixa.Text = "R$ " + rela.CalcularLucro().ToString();
+        }
+
+        private void btnTicketMedio(object sender, RoutedEventArgs e)
+        {
+            NRelatorio rela = new NRelatorio();
+            Caixa.Text = "R$ " + rela.CalcularTicketMedio().ToString();
+        }
     }
 }
