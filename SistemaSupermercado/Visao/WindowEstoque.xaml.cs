@@ -66,5 +66,10 @@ namespace Visao
             ListaProdutos.ItemsSource = null;
             ListaProdutos.ItemsSource = ne.Select();
         }
+
+        private void ListaProdutos_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            MessageBox.Show("teste");
+        }
     }
 }
