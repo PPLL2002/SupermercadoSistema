@@ -47,6 +47,8 @@ namespace Visao
             nV = new NVenda();
             nV.Delete(v);
 
+            carrinho.Clear();
+
             Carrinho.ItemsSource = null;
 
             Inicar.Visibility = Visibility.Visible;

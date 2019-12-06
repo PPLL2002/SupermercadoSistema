@@ -60,5 +60,12 @@ namespace Visao
         {
             if (ListaFuncionarios.SelectedItem != null) f = ListaFuncionarios.SelectedItem as Funcionario;
         }
+
+        private void ListaFuncionarios_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "Foto") e.Column = null;
+            if (e.PropertyName == "Login") e.Column = null;
+            if (e.PropertyName == "Senha") e.Column = null;
+        }
     }
 }
