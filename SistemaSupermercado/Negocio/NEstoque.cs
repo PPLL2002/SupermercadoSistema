@@ -13,7 +13,7 @@ namespace Negocio
         private List<Produto> estoque = new List<Produto>();
         private PEstoque pe = new PEstoque();
 
-       /* public void Insert(List<Produto> produtos)
+        public void Insert(List<Produto> produtos)
         {
             pe = new PEstoque();
             estoque = pe.Open();
@@ -26,7 +26,7 @@ namespace Negocio
                 }
             }
             pe.Save(estoque);
-        }*/
+        }
         public void Insert(Produto p)
         {
             PEstoque pE = new PEstoque();
@@ -38,60 +38,23 @@ namespace Negocio
         {
             PItemCompra pIC = new PItemCompra();
             List<ItemCompra> lIC = pIC.Open();
-            
             PEstoque pE = new PEstoque();
             List<Produto> lP = pE.Open();
-
-            foreach (ItemCompra i in lIC)
+            foreach(ItemCompra i in lIC)
             {
-                Produto p = null;
-                if (lP.Count == 0)
+                Produto p = lP.Where(x => x.Id == i.IdProduto).Single();
+                if(p != null)
                 {
                     PProduto pP = new PProduto();
                     List<Produto> listP = pP.Open();
                     p = listP.Where(x => x.Id == i.IdProduto).Single();
-                    p.Qtd = i.Qtd;
-                    p.Preco += 2;
                     Insert(p);
-                    continue;
-                }
-
-                for (int k = 0; k < lP.Count; k++)
-                {
-                    if (lP[k].Id == i.IdProduto) p = lP[k];
-                }
-                
-                if(p == null)
-                {
-                    PProduto pP = new PProduto();
-                    List<Produto> listP = pP.Open();
-                    p = listP.Where(x => x.Id == i.IdProduto).Single();
-                    p.Qtd = i.Qtd;
-                    p.Preco += 2;
-                    Insert(p);
-                    continue;
                 }
                 else
                 {
-                    p.Qtd += i.Qtd;
-                    Update(p);
-                    continue;
+                    p.Qtd += i.Qtd();
                 }
             }
-        }
-        public void Update(Produto p)
-        {
-            PEstoque pE = new PEstoque();
-            List<Produto> lP = pE.Open();
-            for(int k = 0; k < lP.Count; k++)
-            {
-                if(lP[k].Id == p.Id)
-                {
-                    lP.RemoveAt(k);
-                }
-            }
-            lP.Add(p);
-            pE.Save(lP);
         }
         public List<Produto> VerificarValidade()
         {
