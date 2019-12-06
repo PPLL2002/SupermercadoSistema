@@ -118,7 +118,6 @@ namespace Visao
             */
             carrinho.Clear();
             Carrinho.ItemsSource = null;
-
         }
 
         private void btnRemoverItem(object sender, RoutedEventArgs e)
