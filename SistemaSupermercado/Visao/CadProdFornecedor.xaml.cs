@@ -35,17 +35,24 @@ namespace Visao
 
         private void InserirProduto(object sender, RoutedEventArgs e)
         {
-            p = new Produto();
-            p.Nome = nomeProduto.Text;
-            p.Descricao = descProduto.Text;
-            p.Qtd = int.Parse(qntdProduto.Text);
-            p.Validade = DateTime.Parse(validadeProduto.Text);
-            p.Preco = decimal.Parse(precoProduto.Text);
-            p.IdFornecedor = forn.Id;
-            nP = new NProduto();
-            nP.Insert(p);
-            listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select(forn.Id);
+            try
+            {
+                p = new Produto();
+                p.Nome = nomeProduto.Text;
+                p.Descricao = descProduto.Text;
+                p.Qtd = int.Parse(qntdProduto.Text);
+                p.Validade = DateTime.Parse(validadeProduto.Text);
+                p.Preco = decimal.Parse(precoProduto.Text);
+                p.IdFornecedor = forn.Id;
+                nP = new NProduto();
+                nP.Insert(p);
+                listaProdutos.ItemsSource = null;
+                listaProdutos.ItemsSource = nP.Select(forn.Id);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Preencha todos os campos para inserir um produto");
+            }
         }
 
         private void ListaProdutos_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,16 +70,23 @@ namespace Visao
 
         private void AtualizarProduto(object sender, RoutedEventArgs e)
         {
-            p.Nome = nomeProduto.Text;
-            p.Descricao = descProduto.Text;
-            p.Qtd = int.Parse(qntdProduto.Text);
-            p.Validade = DateTime.Parse(validadeProduto.Text);
-            p.Preco = decimal.Parse(precoProduto.Text);
-            p.IdFornecedor = forn.Id;
-            nP = new NProduto();
-            nP.Update(p);
-            listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select(forn.Id);
+            try
+            {
+                p.Nome = nomeProduto.Text;
+                p.Descricao = descProduto.Text;
+                p.Qtd = int.Parse(qntdProduto.Text);
+                p.Validade = DateTime.Parse(validadeProduto.Text);
+                p.Preco = decimal.Parse(precoProduto.Text);
+                p.IdFornecedor = forn.Id;
+                nP = new NProduto();
+                nP.Update(p);
+                listaProdutos.ItemsSource = null;
+                listaProdutos.ItemsSource = nP.Select(forn.Id);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Selecione um produto para atualiza-lo");
+            }
         }
 
         private void DeleteProduto(object sender, RoutedEventArgs e)

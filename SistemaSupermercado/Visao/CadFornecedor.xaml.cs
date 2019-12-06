@@ -31,14 +31,21 @@ namespace Visao
 
         private void InserirFornecedor(object sender, RoutedEventArgs e)
         {
-            f = new Fornecedor();
-            f.Nome = nomeForn.Text;
-            f.Email = emailForn.Text;
-            f.Categoria = categForn.Text;
-            nF = new NFornecedor();
-            nF.Insert(f);
-            CadProdFornecedor prodF = new CadProdFornecedor(f);
-            prodF.ShowDialog();
+            try
+            {
+                f = new Fornecedor();
+                f.Nome = nomeForn.Text;
+                f.Email = emailForn.Text;
+                f.Categoria = categForn.Text;
+                nF = new NFornecedor();
+                nF.Insert(f);
+                CadProdFornecedor prodF = new CadProdFornecedor(f);
+                prodF.ShowDialog();
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Preencha todos os campos!");
+            }
         }
 
         private void ListarFornecedores(object sender, RoutedEventArgs e)
@@ -51,18 +58,26 @@ namespace Visao
         private void RemoverFornecedor(object sender, RoutedEventArgs e)
         {
             nF = new NFornecedor();
-            nF.Delete(listaFornecedores.SelectedItem as Fornecedor);
-            listaFornecedores.ItemsSource = null;
-            listaFornecedores.ItemsSource = nF.Select();
+            if(listaFornecedores.SelectedItem != null) { 
+                nF.Delete(listaFornecedores.SelectedItem as Fornecedor);
+                listaFornecedores.ItemsSource = null;
+                listaFornecedores.ItemsSource = nF.Select();
+            }
         }
 
         private void AtualizarFornecedor(object sender, RoutedEventArgs e)
         {
+            try { 
             f.Nome = nomeForn.Text;
             f.Email = emailForn.Text;
             f.Categoria = categForn.Text;
             nF = new NFornecedor();
             nF.Update(f);
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Selecione um fornecedor para atualiza-lo");
+            }
         }
 
         private void ListaFornecedores_SelectionChanged(object sender, SelectionChangedEventArgs e)

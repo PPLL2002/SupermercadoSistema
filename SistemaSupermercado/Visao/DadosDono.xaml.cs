@@ -35,13 +35,19 @@ namespace Visao
 
         private void btnSalvar(object sender, RoutedEventArgs e)
         {
-            d.Nome = nomeAdm.Text;
-            d.Cpf = cpfAdm.Text;
-            nD = new NDono();
-            nD.Update(d);
-            NL = new NLogin();
-            NL.TrocarSenha(loginAdm.Text, senhaAdm.Text);
-            this.Close();
+            try { 
+                d.Nome = nomeAdm.Text;
+                d.Cpf = cpfAdm.Text;
+                nD = new NDono();
+                nD.Update(d);
+                NL = new NLogin();
+                NL.TrocarSenha(loginAdm.Text, senhaAdm.Text);
+                this.Close();
+            }
+            catch (ArgumentNullException)
+            {
+                MessageBox.Show("Preencha todos os campos para altera-los ou pressione cancelar");
+            }
         }
 
         private void btnCancelar(object sender, RoutedEventArgs e)

@@ -37,10 +37,9 @@ namespace Negocio
                 }
                 if (estoque.Count == 0)
                 {
-                    item = x;
                     foreach (Produto p in lPP)
                     {
-                        if (item.IdProduto == p.Id) { p.Qtd = x.Qtd; estoque.Add(p); break; }
+                        if (x.IdProduto == p.Id) { p.Qtd = x.Qtd; estoque.Add(p); break; }
                     }
                 }
                 if (item != null)

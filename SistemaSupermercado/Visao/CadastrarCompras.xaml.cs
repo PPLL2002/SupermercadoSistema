@@ -74,15 +74,22 @@ namespace Visao
        
         private void btnIniciarCompra(object sender, RoutedEventArgs e)
         {
-            c = new Compra();
-            c.IdFornecedor = f.Id;
-            c.Data = DateTime.Now;
+            try
+            {
+                c = new Compra();
+                c.IdFornecedor = f.Id;
+                c.Data = DateTime.Now;
 
-            NCompra nC = new NCompra();
-            nC.Insert(c);
+                NCompra nC = new NCompra();
+                nC.Insert(c);
 
-            IniciarCompra.Visibility = Visibility.Hidden;
-            CancelarCompra.Visibility = Visibility.Visible;
+                IniciarCompra.Visibility = Visibility.Hidden;
+                CancelarCompra.Visibility = Visibility.Visible;
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Primeiro selecione um fornecedor para ver os produtos disponiveis");
+            }
          
         }
 
@@ -136,20 +143,44 @@ namespace Visao
 
         private void ListaProdutos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ItemCompra iC = new ItemCompra();
-            iC.Preco = pC.Preco;
-            iC.Qtd = int.Parse(qtdCompra.Text);
-            iC.IdProduto = pC.Id;
-            iC.IdCompra = c.Id;
-            NItemCompra nIC = new NItemCompra();
-            nIC.Insert(iC);
-            carrinho.Add(iC);
-
+            try
+            {
+                ItemCompra iC = new ItemCompra();
+                iC.Preco = pC.Preco;
+                iC.Qtd = int.Parse(qtdCompra.Text);
+                iC.IdProduto = pC.Id;
+                iC.IdCompra = c.Id;
+                NItemCompra nIC = new NItemCompra();
+                nIC.Insert(iC);
+                carrinho.Add(iC);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Quantidade inválida");
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("Insira uma quantidade disponivel");
+            }
+            catch (OverflowException){
+                MessageBox.Show("Insira uma quantidade disponivel");
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Inicie uma venda para comprar produtos");
+            }
 
             Carrinho.ItemsSource = null;
             Carrinho.ItemsSource = carrinho;
 
 
+            nP = new NProduto();
+            listaProdutos.ItemsSource = null;
+            listaProdutos.ItemsSource = nP.Select(f.Id);
+        }
+
+        private void btnListarProdutos(object sender, RoutedEventArgs e)
+        {
             nP = new NProduto();
             listaProdutos.ItemsSource = null;
             listaProdutos.ItemsSource = nP.Select(f.Id);
