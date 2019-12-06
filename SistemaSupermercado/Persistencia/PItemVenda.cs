@@ -14,7 +14,7 @@ namespace Persistencia
         private string arquivo = "itens_vendas.xml";
         public List<ItemVenda> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(ItemVenda));
+            XmlSerializer x = new XmlSerializer(typeof(List<ItemVenda>));
             StreamReader f = null;
             List<ItemVenda> l = null;
             try
@@ -34,7 +34,7 @@ namespace Persistencia
         }
         public void Save(List<ItemVenda> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(ItemVenda));
+            XmlSerializer x = new XmlSerializer(typeof(List<ItemVenda>));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
             x.Serialize(f, l);
             f.Close();

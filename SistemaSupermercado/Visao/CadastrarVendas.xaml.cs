@@ -27,7 +27,8 @@ namespace Visao
         }
         Venda v;
         NVenda nV;
-        List<ItemVenda> carrinho;
+        NItemVenda nIV;
+        List<ItemVenda> carrinho = new List<ItemVenda>();
         NEstoque NE;
         private void btnIniciarVenda(object sender, RoutedEventArgs e)
         {
@@ -40,17 +41,18 @@ namespace Visao
             Cancelar.Visibility = Visibility.Visible;
             Finalizar.Visibility = Visibility.Visible;
             CancelarItem.Visibility = Visibility.Visible;
-            VenderProd.Visibility = Visibility.Visible;
         }
         private void btnCancelarVenda(object sender, RoutedEventArgs e)
         {
             nV = new NVenda();
-            
+            nV.Delete(v);
+
+            Carrinho.ItemsSource = null;
+
             Inicar.Visibility = Visibility.Visible;
             Cancelar.Visibility = Visibility.Hidden;
             Finalizar.Visibility = Visibility.Hidden;
             CancelarItem.Visibility = Visibility.Hidden;
-            VenderProd.Visibility = Visibility.Hidden;
         }
 
         private void ListarProdutos(object sender, RoutedEventArgs e)
@@ -72,6 +74,55 @@ namespace Visao
             NE = new NEstoque();
             ListaPEstoque.ItemsSource = null;
             ListaPEstoque.ItemsSource = NE.SearchID(int.Parse(txtPesqID.Text));
+        }
+
+        private void SelecionarItemParaAddCarrinho(object sender, MouseButtonEventArgs e)
+        {
+            ItemVenda iv = new ItemVenda();
+            iv.IdProduto = p.Id;
+            iv.IdVenda = v.Id;
+            iv.Preco = p.Id;
+            iv.Qtd = int.Parse(qtd.Text);
+            NItemVenda nIV = new NItemVenda();
+            nIV.Insert(iv);
+
+            carrinho.Add(iv);
+
+            Carrinho.ItemsSource = null;
+            Carrinho.ItemsSource = carrinho;
+        }
+        Produto p;
+        private void ItemSelecionado(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListaPEstoque.SelectedItem != null) p = ListaPEstoque.SelectedItem as Produto;
+        }
+        ItemVenda itenV;
+        private void ItemCarrinhoSelecionado(object sender, SelectionChangedEventArgs e)
+        {
+            if (Carrinho.SelectedItem != null) itenV = Carrinho.SelectedItem as ItemVenda;
+        }
+
+        private void CancelarItem_Click(object sender, RoutedEventArgs e)
+        {
+            carrinho.Remove(itenV);
+
+            nIV = new NItemVenda();
+            nIV.Delete(itenV);
+
+            Carrinho.ItemsSource = null;
+            Carrinho.ItemsSource = carrinho;
+        }
+
+        private void FinacalizarCompra_Click(object sender, RoutedEventArgs e)
+        {
+            carrinho.Clear();
+
+            Inicar.Visibility = Visibility.Visible;
+            Cancelar.Visibility = Visibility.Hidden;
+            Finalizar.Visibility = Visibility.Hidden;
+            CancelarItem.Visibility = Visibility.Hidden;
+
+            Carrinho.ItemsSource = null;
         }
     }
 }

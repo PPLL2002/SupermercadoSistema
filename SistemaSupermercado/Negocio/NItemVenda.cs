@@ -8,21 +8,21 @@ using Persistencia;
 
 namespace Negocio
 {
-    class NItemVenda
+    public class NItemVenda
     {
         public List<ItemVenda> itens;
-        public void Insert(int idv, int idp, int qt, decimal pr)
-        {
-            ItemVenda it = new ItemVenda();
+        public void Insert(ItemVenda it)
+        { 
             PItemVenda p = new PItemVenda();
             itens = p.Open();
-            it.IdVenda = idv;
-            it.IdProduto = idp;
-            it.Qtd = qt;
-            it.Preco = pr;
             itens.Add(it);
             p.Save(itens);
-
+            PEstoque e = new PEstoque();
+            List<Produto> estoque = e.Open();
+            Produto pro = estoque.Where(x => x.Id == it.IdProduto).Single();
+            pro.Qtd -= it.Qtd;
+            NEstoque nE = new NEstoque();
+            nE.Update(pro);
         }
         public void Delete(ItemVenda i)
         {
@@ -31,6 +31,12 @@ namespace Negocio
             for (int l = 0; l < itens.Count; l++)
                 if (itens[l].IdProduto == i.IdProduto && itens[l].IdVenda == i.IdVenda)
                 {
+                    PEstoque e = new PEstoque();
+                    List<Produto> estoque = e.Open();
+                    Produto pro = estoque.Where(x => x.Id == i.IdProduto).Single();
+                    pro.Qtd += i.Qtd;
+                    NEstoque nE = new NEstoque();
+                    nE.Update(pro);
                     itens.RemoveAt(l);
                     break;
                 }

@@ -11,10 +11,10 @@ namespace Persistencia
 {
     public class PVenda
     {
-        private string arquivo = "itens_vendas.xml";
+        private string arquivo = "vendas.xml";
         public List<Venda> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(Venda));
+            XmlSerializer x = new XmlSerializer(typeof(List<Venda>));
             StreamReader f = null;
             List<Venda> l = null;
             try
@@ -34,7 +34,7 @@ namespace Persistencia
         } 
         public void Save(List<Venda> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(Venda));
+            XmlSerializer x = new XmlSerializer(typeof(List<Venda>));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
             x.Serialize(f, l);
             f.Close();
