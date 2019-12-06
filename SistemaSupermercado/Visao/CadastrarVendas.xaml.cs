@@ -44,7 +44,7 @@ namespace Visao
         private void btnCancelarVenda(object sender, RoutedEventArgs e)
         {
             nV = new NVenda();
-            nV.Delete(v);
+            
             Inicar.Visibility = Visibility.Visible;
             Cancelar.Visibility = Visibility.Hidden;
             Finalizar.Visibility = Visibility.Hidden;
