@@ -20,11 +20,11 @@ namespace Negocio
             {
                 PDono Pd = new PDono();
                 Dono d = Pd.Open();
-                if (d.Login == login && d.Senha == crp.Criptografar(senha)) return true;
+                if (d.Login == login && d.Senha == senha) return true;
             }
             foreach(Funcionario f in funcionarios)
             {
-                if (f.Login == login && crp.Criptografar(f.Senha) == crp.Criptografar(senha))
+                if (f.Login == login && f.Senha == crp.Criptografar(senha))
                 {
                     if (tipo == 1)
                     {
@@ -52,6 +52,19 @@ namespace Negocio
                     f.Senha = crp.Criptografar(novasenha);
                     return true;
                 }
+            }
+            return false;
+        }
+        public bool TrocarSenhaDono(string login, string novasenha)
+        {
+            PDono pd = new PDono();
+            Dono dono = new Dono();
+            dono = pd.Open();
+            NCriptografia crp = new NCriptografia();
+            if (dono.Login == login)
+            {
+                dono.Senha = novasenha;
+                return true;
             }
             return false;
         }

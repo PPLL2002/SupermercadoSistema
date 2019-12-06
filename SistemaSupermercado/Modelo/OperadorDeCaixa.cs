@@ -9,6 +9,6 @@ namespace Modelo
     public class OperadorDeCaixa : Funcionario
     {
         public int IdGerente { get; set; }
-        public int Numerocaixa { get; set; }
+        public int Id { get; set; }
     }
 }
