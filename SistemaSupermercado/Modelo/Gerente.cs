@@ -8,7 +8,7 @@ namespace Modelo
 {
     public class Gerente : Funcionario
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
     }
 
 }

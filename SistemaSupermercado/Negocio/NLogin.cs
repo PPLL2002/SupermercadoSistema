@@ -18,8 +18,7 @@ namespace Negocio
             NCriptografia crp = new NCriptografia();
             if (tipo == 0)
             {
-                PDono Pd = new PDono();
-                Dono d = Pd.Open();
+                Dono d = new Dono();
                 if (d.Login == login && d.Senha == senha) return true;
             }
             foreach(Funcionario f in funcionarios)

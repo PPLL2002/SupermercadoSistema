@@ -41,7 +41,7 @@ namespace Visao
                 nD = new NDono();
                 nD.Update(d);
                 NL = new NLogin();
-                NL.TrocarSenha(loginAdm.Text, senhaAdm.Text);
+                NL.TrocarSenhaDono(loginAdm.Text, senhaAdm.Text);
                 this.Close();
             }
             catch (ArgumentNullException)

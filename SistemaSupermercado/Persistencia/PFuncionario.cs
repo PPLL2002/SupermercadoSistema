@@ -36,7 +36,7 @@ namespace Persistencia
 
         public void Save(List<Funcionario> l)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>), new Type[] { typeof(Gerente), typeof(OperadorDeCaixa) });
+            XmlSerializer x = new XmlSerializer(typeof(List<Funcionario>), new Type[] { typeof(Gerente), typeof(OperadorDeCaixa)});
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
 
             x.Serialize(f, l);

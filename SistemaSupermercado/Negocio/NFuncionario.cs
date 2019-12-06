@@ -10,7 +10,7 @@ namespace Negocio
 {
     public class NFuncionario
     {
-        private List<Funcionario> funcionarios = new List<Funcionario>();
+        private List<Funcionario> funcionarios;
 
         public void Insert(Funcionario f)
         {
@@ -40,7 +40,7 @@ namespace Negocio
         {
             PFuncionario pF = new PFuncionario();
             funcionarios = pF.Open();
-            return pF.Open().OrderBy(c => c.Nome).ToList();
+            return funcionarios.OrderBy(c => c.Nome).ToList();
         }
         public void Delete(Funcionario f)
         {
