@@ -88,16 +88,5 @@ namespace Visao
         {
             this.Close();
         }
-
-        private void BtnCaixa_Checked(object sender, RoutedEventArgs e)
-        {
-            if (btnCaixa.IsChecked == true) stackIdGerente.Visibility = Visibility.Visible;
-           
-        }
-
-        private void btnGerente_Uncec(object sender, RoutedEventArgs e)
-        {
-            if (btnCaixa.IsChecked == false) stackIdGerente.Visibility = Visibility.Hidden;
-        }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="TelaGerente" Height="350" Width="250">
+        Title="Gerente" Height="350" Width="250">
     <Grid>
         <GroupBox Header="Gerente" Margin="10">
             <Grid>

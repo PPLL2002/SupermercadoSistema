@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="DadosDono" Height="500" Width="250">
+        Title="Dados Dono" Height="500" Width="250">
     <Grid>
         <GroupBox Header="Admin" Margin="10">
             <Grid>

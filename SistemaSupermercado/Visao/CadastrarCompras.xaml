@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="CadastrarCompras" Height="706.5" Width="800">
+        Title="Cadastrar Compras" Height="706.5" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />

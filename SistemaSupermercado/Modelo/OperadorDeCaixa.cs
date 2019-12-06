@@ -8,7 +8,6 @@ namespace Modelo
 {
     public class OperadorDeCaixa : Funcionario
     {
-        public int IdGerente { get; set; }
         public int NumeroCaixa { get; set; }
     }
 }
