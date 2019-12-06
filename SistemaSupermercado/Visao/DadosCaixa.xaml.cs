@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Negocio;
 
 namespace Visao
 {
@@ -19,6 +20,9 @@ namespace Visao
     /// </summary>
     public partial class DadosCaixa : Window
     {
+
+        NLogin NL;
+
         public DadosCaixa()
         {
             InitializeComponent();
@@ -26,12 +30,14 @@ namespace Visao
 
         private void btnSalvar(object sender, RoutedEventArgs e)
         {
-
+            NL = new NLogin();
+            NL.TrocarSenha(loginCaixa.Text, senhaCaixa.Text);
+            this.Close();
         }
 
         private void btnCancelar(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }
