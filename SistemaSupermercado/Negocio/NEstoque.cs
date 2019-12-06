@@ -34,51 +34,40 @@ namespace Negocio
             lP.Add(p);
             pE.Save(lP);
         }
-        public void UpdateEstoque()
+        public void UpdateEstoque(List<ItemCompra> c)
         {
-            PItemCompra pIC = new PItemCompra();
-            List<ItemCompra> lIC = pIC.Open();
-            
-            PEstoque pE = new PEstoque();
-            List<Produto> lP = pE.Open();
-
-            foreach (ItemCompra i in lIC)
+            pe = new PEstoque();
+            estoque = pe.Open();
+            PProduto PP = new PProduto();
+            List<Produto> lPP = PP.Open();
+            ItemCompra item;
+            foreach(ItemCompra x in c)
             {
-                Produto p = null;
-                if (lP.Count == 0)
+                item = null;
+                for(int i = 0; i < estoque.Count; i++)
                 {
-                    PProduto pP = new PProduto();
-                    List<Produto> listP = pP.Open();
-                    p = listP.Where(x => x.Id == i.IdProduto).Single();
-                    p.Qtd = i.Qtd;
-                    p.Preco += 2;
-                    Insert(p);
-                    continue;
+                    if (estoque[i].Id == x.IdProduto) { estoque[i].Qtd += x.Qtd; break; }
+                    if (i == estoque.Count - 1) item = x;
                 }
-
-                for (int k = 0; k < lP.Count; k++)
+                if (estoque.Count == 0)
                 {
-                    if (lP[k].Id == i.IdProduto) p = lP[k];
+                    item = x;
+                    foreach (Produto p in lPP)
+                    {
+                        if (item.IdProduto == p.Id) { p.Qtd = x.Qtd; estoque.Add(p); break; }
+                    }
                 }
-                
-                if(p == null)
+                if (item != null)
                 {
-                    PProduto pP = new PProduto();
-                    List<Produto> listP = pP.Open();
-                    p = listP.Where(x => x.Id == i.IdProduto).Single();
-                    p.Qtd = i.Qtd;
-                    p.Preco += 2;
-                    Insert(p);
-                    continue;
-                }
-                else
-                {
-                    p.Qtd += i.Qtd;
-                    Update(p);
-                    continue;
+                    foreach(Produto p in lPP)
+                    {
+                        if (item.IdProduto == p.Id) { p.Qtd = item.Qtd; estoque.Add(p); break; }
+                    }
                 }
             }
+            pe.Save(estoque);
         }
+
         public void Update(Produto p)
         {
             PEstoque pE = new PEstoque();
