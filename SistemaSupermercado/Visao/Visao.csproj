@@ -58,17 +58,11 @@
     <Compile Include="AtualizarFuncionario.xaml.cs">
       <DependentUpon>AtualizarFuncionario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DadosCaixa.xaml.cs">
-      <DependentUpon>DadosCaixa.xaml</DependentUpon>
-    </Compile>
     <Compile Include="DadosDono.xaml.cs">
       <DependentUpon>DadosDono.xaml</DependentUpon>
     </Compile>
     <Compile Include="DadosGerente.xaml.cs">
       <DependentUpon>DadosGerente.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="TelaCaixa.xaml.cs">
-      <DependentUpon>TelaCaixa.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowEstoque.xaml.cs">
       <DependentUpon>WindowEstoque.xaml</DependentUpon>
@@ -110,19 +104,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DadosCaixa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="DadosDono.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DadosGerente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="TelaCaixa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
