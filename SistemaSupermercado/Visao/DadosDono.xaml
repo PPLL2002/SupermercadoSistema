@@ -5,13 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Visao"
         mc:Ignorable="d"
-        Title="Dados Dono" Height="500" Width="250">
+        Title="Dados Dono" Height="300" Width="250">
     <Grid>
         <GroupBox Header="Admin" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
@@ -30,18 +28,8 @@
                     <TextBox Name="cpfAdm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical"  Margin="10 0" Grid.ColumnSpan="2" Grid.Row="2">
-                    <TextBlock Text="Login" Margin="0 10"/>
-                    <TextBox Name="loginAdm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
-                </StackPanel>
-
-                <StackPanel Orientation="Vertical"  Margin="10 0" Grid.ColumnSpan="2" Grid.Row="3">
-                    <TextBlock Text="Senha" Margin="0 10"/>
-                    <TextBox Name="senhaAdm" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="150" />
-                </StackPanel>
-
-                <Button Content="Salvar" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Click="btnSalvar"/>
-                <Button Content="Cancelar" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Click="btnCancelar" />
+                <Button Content="Salvar" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Click="btnSalvar"/>
+                <Button Content="Cancelar" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="80" Height="30" Click="btnCancelar" />
             </Grid>
         </GroupBox>
     </Grid>

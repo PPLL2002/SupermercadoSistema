@@ -8,8 +8,8 @@ namespace Modelo
 {
     public class Dono
     {
-        private string nome = "Thiago";
-        private string cpf = "70235451561";
+        private string nome;
+        private string cpf;
         private string login = "admin";
         private string senha = "1234";
         public string Nome
