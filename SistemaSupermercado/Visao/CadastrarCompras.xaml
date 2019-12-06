@@ -50,6 +50,7 @@
                 <DataGrid IsReadOnly="True" Name="listaProdutos" Margin="5" SelectionChanged="SelecionarProdutosParaComprar" MouseDoubleClick="ListaProdutos_MouseDoubleClick"/>
                 <Button x:Name="CancelarCompra" Content="Cancelar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnCancelarCompra" Visibility="Hidden"/>
                 <Button x:Name="IniciarCompra" Content="Iniciar compra" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3" Width="200" Height="30" Click="btnIniciarCompra" />
+                <Button x:Name="ListarProdutos" Content="Listar Produtos" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="4" Width="200" Height="30" Click="btnListarProdutos" />
 
                 <TextBlock Text="Pesquisar" Grid.Row="1" Margin="15 0"/>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

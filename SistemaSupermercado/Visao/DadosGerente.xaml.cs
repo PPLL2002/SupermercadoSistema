@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Modelo;
+using Negocio;
 
 namespace Visao
 {
@@ -19,19 +21,23 @@ namespace Visao
     /// </summary>
     public partial class DadosGerente : Window
     {
+        NLogin NL;
         public DadosGerente()
         {
             InitializeComponent();
+
         }
 
         private void btnSalvar(object sender, RoutedEventArgs e)
         {
-
+            NL = new NLogin();
+            NL.TrocarSenha(loginGerente.Text, senhaGerente.Text);
+            this.Close();
         }
 
         private void btnCancelar(object sender, RoutedEventArgs e)
         {
-
+            Close();
         }
     }
 }

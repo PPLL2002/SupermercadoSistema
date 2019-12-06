@@ -19,7 +19,7 @@ namespace Negocio
             if (tipo == 0)
             {
                 Dono d = new Dono();
-                if (d.Usuario == login && crp.Criptografar(d.Senha) == senha) return true;
+                if (d.Login == login && crp.Criptografar(d.Senha) == senha) return true;
             }
             foreach(Funcionario f in funcionarios)
             {

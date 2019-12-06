@@ -71,5 +71,12 @@ namespace Visao
         {
             MessageBox.Show("teste");
         }
+
+        private void btnListarProdutos(object sender, RoutedEventArgs e)
+        {
+            ne = new NEstoque();
+            ListaProdutos.ItemsSource = null;
+            ListaProdutos.ItemsSource = ne.Select();
+        }
     }
 }

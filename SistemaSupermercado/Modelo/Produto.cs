@@ -32,19 +32,19 @@ namespace Modelo
         public int Qtd
         {
             get { return qtd; }
-            set { if (value >= 0) qtd = value; else throw new ArgumentNullException(); }
+            set { if (value >= 0) qtd = value; else throw new ArgumentException(); }
         }
 
         public decimal Preco
         {
             get { return preco; }
-            set { if (value >= 0) preco = value; else throw new ArgumentNullException(); }
+            set { if (value >= 0) preco = value; else throw new ArgumentException(); }
         }
 
         public DateTime Validade
         {
             get { return validade; }
-            set { if (value != null) validade = value; else throw new ArgumentNullException(); }
+            set { if (value != null) validade = value; else throw new ArgumentException(); }
         }
     }
 }
