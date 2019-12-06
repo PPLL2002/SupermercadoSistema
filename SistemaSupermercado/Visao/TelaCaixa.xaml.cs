@@ -29,5 +29,10 @@ namespace Visao
             DadosCaixa dc = new DadosCaixa();
             dc.ShowDialog();
         }
+
+        private void btnVendas(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

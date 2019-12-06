@@ -23,5 +23,15 @@ namespace Visao
         {
             InitializeComponent();
         }
+
+        private void btnSalvar(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
