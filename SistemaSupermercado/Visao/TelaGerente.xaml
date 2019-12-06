@@ -13,11 +13,13 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <Button Content="Gerenciar Fornecedores" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadastrarForne" />
                 <Button Content="Cadastrar Compras" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnCadComp"/>
                 <Button Content="Verificar Estoque" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnEstoque"/>
+                <Button Content="Alterar Dados" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="150" Height="30" Click="btnAlterarDados"/>
             </Grid>
         </GroupBox>
     </Grid>

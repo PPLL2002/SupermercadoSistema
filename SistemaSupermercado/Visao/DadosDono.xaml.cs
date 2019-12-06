@@ -23,6 +23,7 @@ namespace Visao
     {
         Dono d;
         NDono nD;
+        NLogin NL;
         public DadosDono()
         {
             InitializeComponent();
@@ -38,6 +39,8 @@ namespace Visao
             d.Cpf = cpfAdm.Text;
             nD = new NDono();
             nD.Update(d);
+            NL = new NLogin();
+            NL.TrocarSenha(loginAdm.Text, senhaAdm.Text);
             this.Close();
         }
 
