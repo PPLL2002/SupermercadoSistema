@@ -42,6 +42,10 @@ namespace Visao
             es.ShowDialog();
         }
 
-        
+        private void btnAlterarDados(object sender, RoutedEventArgs e)
+        {
+            DadosGerente dg = new DadosGerente();
+            dg.ShowDialog();
+        }
     }
 }

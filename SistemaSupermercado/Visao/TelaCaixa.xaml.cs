@@ -26,7 +26,8 @@ namespace Visao
 
         private void btnAlterarDados(object sender, RoutedEventArgs e)
         {
-
+            DadosCaixa dc = new DadosCaixa();
+            dc.ShowDialog();
         }
     }
 }
