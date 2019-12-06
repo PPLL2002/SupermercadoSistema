@@ -20,11 +20,11 @@ namespace Negocio
             {
                 PDono Pd = new PDono();
                 Dono d = Pd.Open();
-                if (d.Login == login && d.Senha == senha) return true;
+                if (d.Login == login && d.Senha == crp.Criptografar(senha)) return true;
             }
             foreach(Funcionario f in funcionarios)
             {
-                if (f.Login == login && crp.Criptografar(f.Senha) == senha)
+                if (f.Login == login && crp.Criptografar(f.Senha) == crp.Criptografar(senha))
                 {
                     if (tipo == 1)
                     {

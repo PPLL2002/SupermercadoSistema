@@ -10,7 +10,7 @@ namespace Modelo
     {
         private string nome = "Thiago";
         private string cpf = "70235451561";
-        private string login = "titi";
+        private string login = "admin";
         private string senha = "1234";
         public string Nome
         {
