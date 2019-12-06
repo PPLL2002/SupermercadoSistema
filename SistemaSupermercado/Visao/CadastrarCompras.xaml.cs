@@ -109,7 +109,7 @@ namespace Visao
             IniciarCompra.Visibility = Visibility.Visible;
             CancelarCompra.Visibility = Visibility.Hidden;
 
-            nE.UpdateEstoque();
+            nE.UpdateEstoque(carrinho);
            /* foreach(ItemCompra i in carrinho)
             {
                 p = p.Where(x => x.Id == i.IdProduto).ToList();
@@ -118,6 +118,7 @@ namespace Visao
             */
             carrinho.Clear();
             Carrinho.ItemsSource = null;
+
         }
 
         private void btnRemoverItem(object sender, RoutedEventArgs e)

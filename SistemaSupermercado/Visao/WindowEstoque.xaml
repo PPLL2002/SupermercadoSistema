@@ -11,7 +11,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DataGrid Name="ListaProdutos" Margin="10" SelectionChanged="ListaProdutos_SelectionChanged" CellEditEnding="ListaProdutos_CellEditEnding"/>
+        <DataGrid IsReadOnly="True" Name="ListaProdutos" Margin="10" SelectionChanged="ListaProdutos_SelectionChanged" CellEditEnding="ListaProdutos_CellEditEnding"/>
         <GroupBox Grid.Row="1" Margin="7" Header="Vefificar Estoque">
             <Grid>
                 <Grid.RowDefinitions>
