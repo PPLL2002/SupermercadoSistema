@@ -28,69 +28,69 @@ namespace Visao
 
         private void EntrarDono(object sender, RoutedEventArgs e)
         {
-            /*bool logou = false;
+            bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
                 if (w.ShowDialog().Value)
                 {
-                    Login l = new Login();
+                    NLogin l = new NLogin();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 0);
                     if (logou)
                     {
-                        */
+                        
                         TelaAdm adm = new TelaAdm();
                         this.Close();
                         adm.Show();
-                    /*}
+                    }
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);*/
+            } while (!logou);
         }
 
         private void EntrarGerente(object sender, RoutedEventArgs e)
         {
-            /*bool logou = false;
+            bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
                 if (w.ShowDialog().Value)
                 {
-                    Login l = new Login();
+                    NLogin l = new NLogin();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 1);
                     if (logou)
-                    {*/
+                    {
                         TelaGerente gerente = new TelaGerente();
                         this.Close();
                         gerente.ShowDialog();
-                    /*}
+                    }
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);*/
+            } while (!logou);
         }
 
         private void EntrarCaixa(object sender, RoutedEventArgs e)
         {
-           /* bool logou = false;
+            bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
                 if (w.ShowDialog().Value)
                 {
-                    Login l = new Login();
+                    NLogin l = new NLogin();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 2);
                     if (logou)
-                    {*/
+                    {
                         CadastrarVendas cv = new CadastrarVendas();
                         this.Close();
                         cv.ShowDialog();
-                    /*}
+                    }
                     if (!logou) { MessageBox.Show("Usuário ou senha inválidos"); }
                 }
                 else break;
-            } while (!logou);*/
+            } while (!logou);
         }
     }
 }
