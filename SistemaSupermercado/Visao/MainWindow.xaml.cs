@@ -34,10 +34,11 @@ namespace Visao
                 LoginWindow w = new LoginWindow();
                 if (w.ShowDialog().Value)
                 {
-                   NLogin l = new NLogin();
+                    NLogin l = new NLogin();
                     logou = l.VerificarSenha(w.Usuario, w.Senha, 0);
                     if (logou)
                     {
+                        
                         TelaAdm adm = new TelaAdm();
                         this.Close();
                         adm.Show();
@@ -72,7 +73,7 @@ namespace Visao
 
         private void EntrarCaixa(object sender, RoutedEventArgs e)
         {
-           bool logou = false;
+            bool logou = false;
             do
             {
                 LoginWindow w = new LoginWindow();
