@@ -13,12 +13,9 @@ namespace Negocio
         public string Criptografar(string entrada)
         {
             string resultadotxt = "";
-            byte[] mensagemtxt = System.Text.Encoding.Default.GetBytes(entrada);
-            MD5CryptoServiceProvider x = new MD5CryptoServiceProvider();
-            byte[] hashcode = x.ComputeHash(mensagemtxt);
 
-            for (int i = 0; i < hashcode.Length; i++){
-                resultadotxt += (char)(hashcode[i]);
+            for (int i = 0; i < entrada.Length; i++){
+                resultadotxt += (char)( ( (int)entrada[i]) +3);
             }
             return resultadotxt;
         }
