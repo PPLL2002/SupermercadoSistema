@@ -56,7 +56,7 @@ namespace Visao
         {
             ne = new NEstoque();
             ListaProdutos.ItemsSource = null;
-            ListaProdutos.ItemsSource = ne.Search(DateTime.Parse(validadeProduto.Text));
+            ListaProdutos.ItemsSource = ne.SearchData(DateTime.Parse(validadeProduto.Text));
         }
 
         private void btnPreco(object sender, RoutedEventArgs e)

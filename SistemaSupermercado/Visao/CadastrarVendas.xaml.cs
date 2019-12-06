@@ -28,6 +28,7 @@ namespace Visao
         Venda v;
         NVenda nV;
         List<ItemVenda> carrinho;
+        NEstoque NE;
         private void btnIniciarVenda(object sender, RoutedEventArgs e)
         {
             v = new Venda();
@@ -50,6 +51,27 @@ namespace Visao
             Finalizar.Visibility = Visibility.Hidden;
             CancelarItem.Visibility = Visibility.Hidden;
             VenderProd.Visibility = Visibility.Hidden;
+        }
+
+        private void ListarProdutos(object sender, RoutedEventArgs e)
+        {
+            NE = new NEstoque();
+            ListaPEstoque.ItemsSource = null;
+            ListaPEstoque.ItemsSource = NE.Select();
+        }
+
+        private void ProcurarNome(object sender, RoutedEventArgs e)
+        {
+            NE = new NEstoque();
+            ListaPEstoque.ItemsSource = null;
+            ListaPEstoque.ItemsSource = NE.SearchNome(txtPesqNome.Text);
+        }
+
+        private void ProcurarID(object sender, RoutedEventArgs e)
+        {
+            NE = new NEstoque();
+            ListaPEstoque.ItemsSource = null;
+            ListaPEstoque.ItemsSource = NE.SearchID(int.Parse(txtPesqID.Text));
         }
     }
 }

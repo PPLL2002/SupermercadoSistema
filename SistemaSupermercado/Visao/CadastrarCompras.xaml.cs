@@ -99,7 +99,7 @@ namespace Visao
 
             nP = new NProduto();
             listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select();
+            listaProdutos.ItemsSource = nP.Select(f.Id);
         }
 
         private void btnComprar(object sender, RoutedEventArgs e)
@@ -110,12 +110,6 @@ namespace Visao
             CancelarCompra.Visibility = Visibility.Hidden;
 
             nE.UpdateEstoque(carrinho);
-           /* foreach(ItemCompra i in carrinho)
-            {
-                p = p.Where(x => x.Id == i.IdProduto).ToList();
-            }
-            nE.Insert(p);
-            */
             carrinho.Clear();
             Carrinho.ItemsSource = null;
 
@@ -132,7 +126,7 @@ namespace Visao
 
             nP = new NProduto();
             listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select();
+            listaProdutos.ItemsSource = nP.Select(f.Id);
         }
 
         private void SelecionarItemCompra(object sender, SelectionChangedEventArgs e)
@@ -158,7 +152,7 @@ namespace Visao
 
             nP = new NProduto();
             listaProdutos.ItemsSource = null;
-            listaProdutos.ItemsSource = nP.Select();
+            listaProdutos.ItemsSource = nP.Select(f.Id);
         }
     }
 }
